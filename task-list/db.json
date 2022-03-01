@@ -23,6 +23,18 @@
       "day": "Sabados a las 19:00",
       "reminder": true,
       "id": 7
+    },
+    {
+      "text": "Hola",
+      "day": "123",
+      "reminder": true,
+      "id": 8
+    },
+    {
+      "text": "Hola",
+      "day": "123",
+      "reminder": true,
+      "id": 9
     }
   ]
 }

@@ -29,12 +29,6 @@
       "day": "123",
       "reminder": true,
       "id": 8
-    },
-    {
-      "text": "Hola",
-      "day": "123",
-      "reminder": true,
-      "id": 9
     }
   ]
 }

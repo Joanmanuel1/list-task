@@ -23,6 +23,18 @@
       "day": "Sabados a las 19:00",
       "reminder": true,
       "id": 7
+    },
+    {
+      "text": "Hola",
+      "day": "2022-03-10T23:30",
+      "reminder": false,
+      "id": 8
+    },
+    {
+      "text": "xcvxcvxc",
+      "day": "2022-03-12T22:36",
+      "reminder": false,
+      "id": 9
     }
   ]
 }

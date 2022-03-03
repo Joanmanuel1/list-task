@@ -1,18 +1,37 @@
-<div 
-class="task"
-[ngClass]="{reminder: task.reminder}"
-(click)="onToggle(task)"
->
-<h3>
-    {{task.text}} 
-    <fa-icon 
-    [icon]="faTimes"
-    [ngStyle] = "{'color': 'red'}" 
-    (click)="onDelete(task)"
-    > 
-</fa-icon>
- </h3>
-<p>
-    {{task.day}}
-</p>
+<div class="task" [ngClass]="{reminder: task.reminder}" (click)="onToggle(task)">
+    <h3>
+        {{task.text}}
+        <fa-icon [icon]="faTimes" [ngStyle]="{'color': 'red'}" (click)="onDelete(task)">
+        </fa-icon>
+    </h3>
+
+    <div *ngIf="task.day < fecha || task.day == fecha">
+
+        <P style="color:red"><b>{{task.day}} Vencida</b> </P>
+
+
+    </div>
+    <div *ngIf="task.day > fecha ">
+
+        <P><b>{{task.day}} </b> </P>
+
+    </div>
+
+    <div *ngIf="task.tipo === 'Estudio'">
+        <p style="background-color: aquamarine;">
+            {{task.tipo}}
+        </p>
+    </div>
+    <div *ngIf="task.tipo === 'Trabajo'">
+        <p style="background-color: lightcoral;">
+            {{task.tipo}}
+        </p>
+    </div>
+    <div *ngIf="task.tipo === 'Recreacion'">
+        <p style="background-color: lightblue;">
+            {{task.tipo}}
+        </p>
+    </div>
+
+
 </div>

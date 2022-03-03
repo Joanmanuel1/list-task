@@ -23,6 +23,17 @@ body{
     border-radius: 5px;
 }
 
+.tipo{
+    border: 1px solid;
+    padding: 10px 20px;
+    margin-left: 80px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
 .btn {
     display: inline-block;
     border: none;
@@ -77,6 +88,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.form-control-select {
+    display: flex;
+    align-items: center;
+    
 }
 
 .form-control-check label {

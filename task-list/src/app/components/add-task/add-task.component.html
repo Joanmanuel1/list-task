@@ -1,32 +1,29 @@
-<form class="add-form" id="formulario"
-(ngSubmit)="onSubmit()"
-
-*ngIf="showAddTask"
-
->
+<form class="add-form" id="formulario" (ngSubmit)="onSubmit()" *ngIf="showAddTask">
     <div class="form-control">
         <label for="text">Tarea</label>
-        <input type="text" name="text" id="text"  placeholder="Add task text" 
-        [(ngModel)]="text"
-        />
+        <input type="text" name="text" id="text" placeholder="Add task text" [(ngModel)]="text" />
     </div>
 
     <div class="form-control">
         <label for="day">Dia y Horario</label>
-        <input type="datetime-local" name="day" id="day" 
-        [(ngModel)]="day"
-        />
+        <input type="date" name="day" id="day" [(ngModel)]="day" />
     </div>
 
     <div class="form-control form-control-check">
         <label for="reminder">Recordatorio</label>
-        <input type="checkbox" name="reminder" id="reminder"
-        [(ngModel)]="reminder"
-         />
+        <input type="checkbox" name="reminder" id="reminder" [(ngModel)]="reminder"  />
     </div>
-    {{text}}
 
-        <button type="submit"  value="Save Task" class="btn guardar" onclick="limpiar()"><b>Guardar tarea </b>  </button>
-        <button type="reset" class="btn limpiar"> <b> Limpiar	campos</b> </button>
+    <div class="form-control form-control-select">
+        <label for="tipo">Tipos de tarea:</label>
+        <select name="tipo" id="tipo" class="tipo" [(ngModel)]="tipo">
+            <option value="Trabajo" selected>Trabajo</option>
+            <option value="Estudio">Estudio</option>
+            <option value="Recreacion">Recreacion</option>
+        </select>
+    </div>
+
+    <button type="submit" value="Save Task" class="btn guardar" onclick="limpiar()"><b>Guardar tarea </b> </button>
+    <button type="reset" class="btn limpiar"> <b> Limpiar campos</b> </button>
 
 </form>

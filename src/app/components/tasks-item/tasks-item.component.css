@@ -1,6 +1,6 @@
 .task  {
-    background-color: rgb(252, 245, 245);
-    margin: 5px;
+    background-color: rgb(241, 232, 232);
+    margin: 5px 0px 20px 0px;
     padding: 10px 20px;
     cursor: pointer;
 }

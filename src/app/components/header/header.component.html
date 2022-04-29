@@ -1,10 +1,55 @@
-<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> <img
+        src="https://yt3.ggpht.com/9upo5zbtXzvItj8IMHF1X9hI95x4YOeGCApLk1DhMQCHftmJvf2GWmbJXrC1TKCrn-AyQ2txBw=s900-c-k-c0x00ffffff-no-rj"
+        alt="" style="height: 70px; width: 70px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="ingresar">Ingresar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="registrar">Registrar</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="ingresar">Ingresar</a></li>
+            <li><a class="dropdown-item" href="registrar">Registrar <i class="fab fa-twitter"></i></a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Something else here <i class="fab fa-facebook-f"></i></a></li>
+          </ul>
 
-<h1> {{title}} </h1>
-<app-button 
-color="{{showAddTask ? 'red' : 'lightskyblue'}}" 
-text="{{showAddTask ? 'Close Task'  : 'Add Task'}}"
-(btnClick)="toggleAddTask()"
-*ngIf="hasRoute('/')"
-></app-button>
-</header>
+        </li>
+      </ul>
+      <ul class="d-flex">
+        <li type="none" class="nav-item">
+          <!-- Facebook -->
+          <a class="nav-link" style="color: #3b5998;" href="#!" role="button"><i class="fab fa-facebook-f fa-lg"></i></a>
+        </li>
+        <li type="none" class="nav-item">
+          <!-- Twitter -->
+          <a class="nav-link" style="color: #55acee;" href="#!" role="button"><i class="fab fa-twitter fa-lg"></i></a>
+        </li>
+        <li type="none" class="nav-item">
+          <!-- Google -->
+          <a class="nav-link" style="color: #dd4b39;" href="#!" role="button"><i class="fab fa-google fa-lg"></i></a>
+        </li>
+        <li type="none" class="nav-item">
+          <!-- Instagram -->
+          <a class="nav-link" style="color: #ac2bac;" href="#!" role="button"><i class="fab fa-instagram fa-lg"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

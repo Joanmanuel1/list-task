@@ -1,122 +1,248 @@
 <section>
-
-
     <div class="card mb-3">
         <div class="container-fluid">
-
-
-            <div class="card-body" style="text-align: center;">
-                <h5 class="card-title">Banner</h5>
-                <p class="card-text">Deberá tener un banner que
-                    te represente, que será una
-                    parte importante de tu
-                    identidad. Debés evitar
-                    cualquier fondo que se
-                    considere ofensivo o fuera de
-                    la línea del programa</p>
-                <p class="card-text"><small class="text-muted">Mi Portfolio Web</small></p>
-            </div>
-            <img src="https://esbabarrionorte.edu.ar/wp-content/uploads/2020/10/Sin-titulo-6.jpg" class="card-img-top"
-                alt="...">
-
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="card mb-3">
-        <div class="container-fluid">
-
-
-            <div class="card-body" style="text-align: center;">
-                <h5 class="card-title">Acerca de</h5>
-                <img src="../assets/perfil.png" alt="" style="height: 100px; width: 100px;">
-                <h2>Joan Manuel Romero</h2>
-                <p>Full Stack Developer Jr</p>
-                <p class="card-text">Aquí debés poner tu información profesional resumida.
-                </p>
-                <p class="card-text"><small class="text-muted">Mi Portfolio Web</small></p>
-            </div>
+            <img src="../assets/banner.png" class="card-img-top" alt="imagen de una persona con una notebook">
         </div>
     </div>
 </section>
 
 
+
 <section>
-    <div class="card mb-3">
-        <div class="container-fluid">
+
+    <div class="container-fluid">
+        <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation" style="width: 30%; margin-right: 25px;">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                    type="button" role="tab" aria-controls="pills-home" aria-selected="true" style="width: 100%;">Acerca
+                    de mi</button>
+            </li>
+            <li class="nav-item" role="presentation" style="width: 30%;  margin-right: 25px;">
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                    type="button" role="tab" aria-controls="pills-profile" aria-selected="false"
+                    style="width: 100%; ">Experiencia</button>
+            </li>
+            <li class="nav-item" role="presentation" style="width: 30%; margin-right: 25px;">
+                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                    type="button" role="tab" aria-controls="pills-contact" aria-selected="false"
+                    style="width: 100%; ">Educación</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="form-group row">
+                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
+                        <img src="../assets/perfil.png" alt=""
+                            style="height: 100%; width: 100%; max-width: 250px; max-height: 250px; ">
+                    </div>
+                    <div class="col-sm-6" style="margin-top: 25px;">
+                        <h2> Joan Manuel Romero</h2>
+                        <h3>Full Stack Developer Jr</h3>
+                        <p>Analista de Sistemas </p>
+                        <p>Me gustaria poder desarrollarme en una empresa sólida que me permita crecer profesionalmente
+                            y donde aplicar mis conocimientos mediante un desarrollo constante.</p>
+                    </div>
+                </div>
+            </div>
 
 
-            <div class="card-body" style="text-align: center;">
-                <h5 class="card-title">Experiencia</h5>
-                <p class="card-text">Aquí colocarástoda la información de los lugares donde has trabajado, incluyendo
-                    título del puesto, periodo, logo de la empresa, si lo encontrás, y descripción de las actividades
-                    realizadas en ese puesto.</p>
-                <p class="card-text"><small class="text-muted">Mi Portfolio Web</small></p>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                <div class="form-group row">
+                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
+                        <img src="../assets/mpf.png" alt=""
+                            style="height: 100%; width: 100%; max-width: 350px; max-height: 350px; ">
+                    </div>
+
+                    <div class="col-sm-6" style=" margin-top: 25px;">
+
+                        <p class="card-text">Puesto ocupado: Analista QA</p>
+                        <p>Empresa: Ministerio Publico Fiscal</p>
+                        <p class="card-text">Periodo trabajado: 05/07/2021 hasta 22/04/2022</p>
+                        <p class="card-text">Tareas Realizadas: Testing</p>
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
+                        <img src="../assets/uxor.png" alt=""
+                            style="height: 100%; width: 100%; max-width: 350px; max-height: 350px; ">
+                    </div>
+
+                    <div class="col-sm-6" style=" margin-top: 25px;">
+
+                        <p class="card-text">Puesto ocupado: Analista Funcional</p>
+                        <p>Empresa: Uxor IT</p>
+                        <p class="card-text">Periodo trabajado: 05/07/2021 hasta 22/04/2022</p>
+                        <p class="card-text">Tareas Realizadas: Analisis funcional</p>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
+                        <img src="../assets/nahual.png" alt=""
+                            style="height: 100%; width: 100%; max-width: 350px; max-height: 350px; ">
+                    </div>
+
+                    <div class="col-sm-6" style=" margin-top: 25px;">
+
+                        <p class="card-text">Puesto ocupado: Analista QA</p>
+                        <p>Empresa: Nahual IT</p>
+                        <p class="card-text">Periodo trabajado: 05/07/2021 hasta 22/04/2022</p>
+                        <p class="card-text">Tareas Realizadas: Testing</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="form-group row">
+                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
+                        <img src="../assets/ifts.png" alt=""
+                            style="height: 100%; width: 100%; max-width: 350px; max-height: 200px; ">
+                    </div>
+
+                    <div class="col-sm-6" style=" margin-top: 25px;">
+
+                        <p class="card-text">Instituto de Formacion Superior N° 11</p>
+                        <p>Tecnicatura Superior en Análisis de Sistemas</p>
+                        <p class="card-text">Desde: 03/2019 Hasta: 10/12/2021</p>
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
+                        <img src="../assets/unlam.png" alt=""
+                            style="height: 100%; width: 100%; max-width: 350px; max-height: 200px; ">
+                    </div>
+
+                    <div class="col-sm-6" style=" margin-top: 25px;">
+
+                        <p class="card-text">Universidad Nacional de La Matanza</p>
+                        <p>Licenciatura en Gestión de Tecnología</p>
+                        <p class="card-text">Desde: 03/2022 Hasta: Actualidad</p>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>
+
 </section>
 
 
 <section>
-    <div class="card mb-3">
-        <div class="container-fluid">
+
+    <div class="container-fluid">
+        <ul class="nav nav-pills nav-fill" id="pills-tab2" role="tablist">
+            <li class="nav-item" role="presentation" style="width: 30%; margin-right: 25px;">
+                <button class="nav-link active" id="pills-home-tab2" data-bs-toggle="pill" data-bs-target="#pills-home2"
+                    type="button" role="tab" aria-controls="pills-home2" aria-selected="true" style="width: 100%;">Hard
+                    Skills</button>
+            </li>
+            <li class="nav-item" role="presentation" style="width: 30%;  margin-right: 25px;">
+                <button class="nav-link" id="pills-profile-tab2" data-bs-toggle="pill" data-bs-target="#pills-profile2"
+                    type="button" role="tab" aria-controls="pills-profile" aria-selected="false"
+                    style="width: 100%; ">Soft Skills</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent2">
+            <div class="tab-pane fade show active" id="pills-home2" role="tabpanel" aria-labelledby="pills-home-tab2">
+                <div class="form-group row">
+                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
+                        <img src="" alt="" style="height: 100%; width: 100%; max-width: 350px; max-height: 350px; ">
+                    </div>
+
+                    <div class="col-sm-6" style=" margin-top: 25px;">
+                        <p class="card-text">skill 1</p>
+
+                    </div>
+                </div>
 
 
-            <div class="card-body" style="text-align: center;">
-                <h5 class="card-title">Educacion</h5>
-                <p class="card-text">Escribir toda la
-                    información de tu
-                    formación académica,
-                    certificaciones, cursos,
-                    y todo lo relacionado al
-                    título con que
-                    actualmente contás. Es
-                    importante detallar la
-                    información de la
-                    institución, el logo (de
-                    ser posible), nombre,
-                    carrera o título
-                    estudiado, y en qué
-                    periodo o año.</p>
-                <p class="card-text"><small class="text-muted">Mi Portfolio Web</small></p>
+                <div class="form-group row">
+                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
+                        <img src="" alt="" style="height: 100%; width: 100%; max-width: 350px; max-height: 350px; ">
+                    </div>
+
+                    <div class="col-sm-6" style=" margin-top: 25px;">
+
+                        <p class="card-text">skill 2</p>
+
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
+                        <img src="../assets/g" alt=""
+                            style="height: 100%; width: 100%; max-width: 350px; max-height: 350px; ">
+                    </div>
+
+                    <div class="col-sm-6" style=" margin-top: 25px;">
+
+                        <p class="card-text">skill 3</p>
+
+                    </div>
+                </div>
             </div>
+
+
+            <div class="tab-pane fade" id="pills-profile2" role="tabpanel" aria-labelledby="pills-profile-tab2">
+
+                <div class="form-group row">
+                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
+                        <img src="" alt="" style="height: 100%; width: 100%; max-width: 350px; max-height: 350px; ">
+                    </div>
+
+                    <div class="col-sm-6" style=" margin-top: 25px;">
+                        <p class="card-text">skill 1</p>
+
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
+                        <img src="" alt="" style="height: 100%; width: 100%; max-width: 350px; max-height: 350px; ">
+                    </div>
+
+                    <div class="col-sm-6" style=" margin-top: 25px;">
+
+                        <p class="card-text">skill 2</p>
+
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
+                        <img src="../assets/g" alt=""
+                            style="height: 100%; width: 100%; max-width: 350px; max-height: 350px; ">
+                    </div>
+
+                    <div class="col-sm-6" style=" margin-top: 25px;">
+
+                        <p class="card-text">skill 3</p>
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </div>
+
 </section>
+
 
 
 <section>
     <div class="card mb-3">
         <div class="container-fluid">
-
-
             <div class="card-body" style="text-align: center;">
-                <h5 class="card-title">Hard & Soft Skills
-                </h5>
-                <p class="card-text">Con una forma de visualización
-                    atractiva (porejemplo:
-                    porcentajes) mostrarás tu grado
-                    de dominio de habilidades duras y
-                    blandas. Podés también generar
-                    una sección adicional con tu nivel
-                    de idiomas.</p>
-                <p class="card-text"><small class="text-muted">Mi Portfolio Web</small></p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section>
-    <div class="card mb-3">
-        <div class="container-fluid">
-
-
-            <div class="card-body" style="text-align: center;">
-                <h5 class="card-title">Proyectos
-                </h5>
+                <h5 class="card-title">Proyectos </h5>
                 <p class="card-text">En esta sección deberá
                     encontrarse la
                     información sobre los
@@ -139,3 +265,46 @@
     </div>
 </section>
 
+
+<div>
+    <canvas id="myChart" width="400" height="400"></canvas>
+
+</div>
+
+<script>
+    const ctx = document.getElementById('myChart');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    </script>

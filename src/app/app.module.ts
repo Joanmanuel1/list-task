@@ -39,15 +39,18 @@ const appRoute:Routes = [
     FooterComponent,
     RegistrarComponent,
     IngresarComponent,
-    PortfolioComponent
+    PortfolioComponent, 
+    
+    
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoute, {enableTracing: true})
-
+    RouterModule.forRoot(appRoute, {enableTracing: true}),
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

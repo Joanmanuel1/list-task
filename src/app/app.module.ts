@@ -17,6 +17,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { IngresarComponent } from './components/ingresar/ingresar.component';
 import { RegistrarComponent } from './components/registrar/registrar.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { DatosPersonalesComponent } from './components/datos-personales/datos-personales.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
 
 
 const appRoute:Routes = [
@@ -39,7 +42,10 @@ const appRoute:Routes = [
     FooterComponent,
     RegistrarComponent,
     IngresarComponent,
-    PortfolioComponent, 
+    PortfolioComponent,
+    DatosPersonalesComponent,
+    SkillsComponent,
+    ProyectosComponent, 
     
     
   ],

@@ -1,3 +1,67 @@
+<div class="col-md-4">
+    <table style="border: black 1px solid;">
+        <thead>
+            <tr style="border: black 1px solid;">
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+            </tr>
+
+        </thead>
+        <tbody *ngIf="usuarios.length > 0; else fila">
+            <tr *ngFor=" let usuario of usuarios">
+                <td>{{usuario.id}}</td>
+                <td>{{usuario.nombre}}</td>
+                <td>{{usuario.apellido}}</td>
+                <td>{{usuario.edad}}</td>
+                <td><a class="btn btn-danger" href="">Eliminar</a></td>
+            </tr>
+        </tbody>
+        <ng-template #fila>
+            <tbody>
+                <tr>
+                    <td colspan="4">No hay mas filas</td>
+                </tr>
+            </tbody>
+        </ng-template>
+    </table>
+
+</div>
+
+<div class="col-md-4">
+    <table style="border: black 1px solid;">
+        <thead>
+            <tr style="border: black 1px solid;">
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+            </tr>
+
+        </thead>
+        <tbody *ngFor=" let usuario of usuarios">
+            <tr *ngIf="usuario.id == usuarioID">
+                    <td>{{usuario.id}}</td>
+                    <td>{{usuario.nombre}}</td>
+                    <td>{{usuario.apellido}}</td>
+                    <td>{{usuario.edad}}</td>
+                    <td><a class="btn btn-danger" href="">Eliminar</a></td>
+            </tr>
+        </tbody>
+        <ng-template #fila>
+            <tbody>
+                <tr>
+                    <td colspan="4">No hay mas filas</td>
+                </tr>
+            </tbody>
+        </ng-template>
+    </table>
+
+</div>
+
+
+
 <section>
     <div class="container-fluid">
         <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
@@ -34,12 +98,11 @@
                             style=" width: 50px; height: 50px; border-radius: 50%; background-color: rgb(25, 180, 129); border:none; float: right;">
                             <i class="fa-solid fa-pen" style="color: aliceblue;"></i>
                         </button>
-                        <h2> Joan Manuel Romero</h2>
-                        <h3>Full Stack Developer Jr</h3>
-                        <p>Analista de Sistemas </p>
-                        <p>Me gustaria poder desarrollarme en una empresa sólida que me permita crecer profesionalmente
-                            y donde aplicar mis conocimientos mediante un desarrollo constante.
-                        </p>
+                            <h2>{{Usuario.nombre}} {{Usuario.apellido}} </h2>
+                            <h3>{{Usuario.titulo}}</h3>
+                            <p>{{Usuario.descripcion}}</p>
+
+
 
                     </div>
 

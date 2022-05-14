@@ -14,6 +14,14 @@ export class DatosPersonalesComponent implements OnInit {
   
   UsuarioID: any = [];
   Usuario: any = [];
+
+
+  experiencia = {empresa: "", puesto: "", fecha_desde: "", fecha_hasta:"", tareas:"" };
+  mensaje: string = "Errorr";
+  experiencias: any = [];
+  experienciaId: string = "";
+
+
   constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
@@ -37,6 +45,15 @@ export class DatosPersonalesComponent implements OnInit {
 
     this.usuarioCargarDatos();
 
+    this.usuarioService.listarExperiencias().subscribe(
+      res => {
+        this.experiencias = res;
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+
+
   }
 
   usuarioCargarDatos() {
@@ -48,6 +65,32 @@ export class DatosPersonalesComponent implements OnInit {
       err => console.log(err)
     );
 
+  }
+
+
+
+  crearExperiencia(){
+    this.usuarioService.crearExperiencia(this.experiencia).subscribe(
+      res => {
+        let result: any = res;
+        this.router.navigate(['']);
+      },
+      err => {
+        console.log(this.mensaje);
+      }
+    )
+  }
+
+  
+  eliminarExperiencia(experiencia: string){
+    this.usuarioService.eliminarExperiencia(experiencia).subscribe(
+      res => {
+        let result: any = res;
+      },
+      err => {
+        console.log(this.mensaje);
+      }
+    )
   }
 
 }

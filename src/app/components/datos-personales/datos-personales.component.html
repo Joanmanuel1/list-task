@@ -42,11 +42,11 @@
         </thead>
         <tbody *ngFor=" let usuario of usuarios">
             <tr *ngIf="usuario.id == usuarioID">
-                    <td>{{usuario.id}}</td>
-                    <td>{{usuario.nombre}}</td>
-                    <td>{{usuario.apellido}}</td>
-                    <td>{{usuario.edad}}</td>
-                    <td><a class="btn btn-danger" href="">Eliminar</a></td>
+                <td>{{usuario.id}}</td>
+                <td>{{usuario.nombre}}</td>
+                <td>{{usuario.apellido}}</td>
+                <td>{{usuario.edad}}</td>
+                <td><a class="btn btn-danger" href="">Eliminar</a></td>
             </tr>
         </tbody>
         <ng-template #fila>
@@ -98,9 +98,9 @@
                             style=" width: 50px; height: 50px; border-radius: 50%; background-color: rgb(25, 180, 129); border:none; float: right;">
                             <i class="fa-solid fa-pen" style="color: aliceblue;"></i>
                         </button>
-                            <h2>{{Usuario.nombre}} {{Usuario.apellido}} </h2>
-                            <h3>{{Usuario.titulo}}</h3>
-                            <p>{{Usuario.descripcion}}</p>
+                        <h2>{{Usuario.nombre}} {{Usuario.apellido}} </h2>
+                        <h3>{{Usuario.titulo}}</h3>
+                        <p>{{Usuario.descripcion}}</p>
 
 
 
@@ -111,74 +111,101 @@
 
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 
-                <div class="form-group row">
-                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success" style="margin-left:45%;" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">¡Suma una nueva experiencia!
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Experiencia nueva</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for=""> Empresa </label>
+                                                <input type="text" name="empresa" [(ngModel)]="experiencia.empresa"
+                                                    placeholder="Ingrese el nombre" class="form-control" autofocus
+                                                    required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="content-select">
+                                                    <label for=""> Puesto </label>
+                                                    <input type="text" name="puesto" [(ngModel)]="experiencia.puesto"
+                                                        placeholder="Ingrese el nombre" class="form-control" required>
+
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="content-select">
+                                                    <label for=""> Fecha desde </label>
+                                                    <input type="date" name="fecha_desde"
+                                                        [(ngModel)]="experiencia.fecha_desde"
+                                                        placeholder="Ingrese el nombre" class="form-control" required>
+
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for=""> Fecha hasta </label>
+                                                <input type="date" name="fecha_hasta"
+                                                    [(ngModel)]="experiencia.fecha_hasta" class="form-control">
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="content-select">
+                                                    <label for=""> Tareas </label>
+                                                    <textarea name="tareas" id="" cols="30" rows="10"
+                                                        class="form-control" required
+                                                        placeholder="Ingrese sus tareas realizadas"
+                                                        [(ngModel)]="experiencia.tareas"></textarea>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary"
+                                                    (click)="crearExperiencia()" data-bs-dismiss="modal">Save
+                                                    changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="form-group row" *ngFor=" let experiencia of experiencias">
+                    <div class="col-sm-6" style="text-align: right; margin-top: 20px; margin-bottom: 20px;">
                         <button type="button"
-                            style=" width: 50px; height: 50px; border-radius: 50%; background-color: rgb(228, 8, 8); border:none; float: left; font-size: 30px !important;">
+                            style=" width: 50px; height: 50px; border-radius: 50%; background-color: rgb(228, 8, 8); border:none; float: left; font-size: 30px !important;" (click)="eliminarExperiencia(experiencia.id)">
                             <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
                         </button>
-                        <img src="../assets/mpf.png" alt=""
-                            style="height: 100%; width: 100%; max-width: 350px; max-height: 350px; ">
+                        <img src="../assets/{{experiencia.id}}.png" alt=""
+                            style="height: 100%; width: 100%; max-width: 450px; max-height: 350px; ">
                     </div>
 
-                    <div class="col-sm-6" style=" margin-top: 15px;">
+                    <div class="col-sm-6" style=" margin-top: 15px; margin-bottom: 15px;">
                         <button type="button"
                             style=" width: 50px; height: 50px; border-radius: 50%; background-color: rgb(25, 180, 129); border:none; float: right;">
                             <i class="fa-solid fa-pen" style="color: aliceblue; "></i>
                         </button>
 
-                        <p class="card-text">Puesto ocupado: Analista QA</p>
-                        <p>Empresa: Ministerio Publico Fiscal</p>
-                        <p class="card-text">Periodo trabajado: 05/07/2021 hasta 22/04/2022</p>
-                        <p class="card-text">Tareas Realizadas: Testing</p>
+                        <p class="animal-data"><b>Empresa:</b> {{experiencia.empresa}} </p>
+                        <p class="animal-data"><b>Puesto:</b> {{experiencia.puesto}} </p>
+                        <p class="animal-data"><b>Tareas:</b> {{experiencia.tareas}} </p>
+                        <p class="animal-data"><b>Desde:</b> {{experiencia.fecha_desde}} </p>
+                        <p class="animal-data"><b>Hasta:</b> {{experiencia.fecha_hasta}} </p>
                     </div>
-                </div>
-
-                <hr>
-                <div class="form-group row">
-                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
-                        <button type="button"
-                            style=" width: 50px; height: 50px; border-radius: 50%; background-color: rgb(228, 8, 8); border:none; float: left; font-size: 30px !important;">
-                            <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
-                        </button>
-                        <img src="../assets/uxor.png" alt=""
-                            style="height: 100%; width: 100%; max-width: 350px; max-height: 350px; ">
-                    </div>
-
-                    <div class="col-sm-6" style=" margin-top: 25px;">
-                        <button type="button" class=""
-                            style=" width: 50px; height: 50px; border-radius: 50%; background-color: rgb(25, 180, 129); border:none; float: right;">
-                            <i class="fa-solid fa-pen" style="color: aliceblue;"></i>
-                        </button>
-
-                        <p class="card-text">Puesto ocupado: Analista Funcional</p>
-                        <p>Empresa: Uxor IT</p>
-                        <p class="card-text">Periodo trabajado: 05/07/2021 hasta 22/04/2022</p>
-                        <p class="card-text">Tareas Realizadas: Analisis funcional</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="form-group row">
-                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
-                        <button type="button"
-                            style=" width: 50px; height: 50px; border-radius: 50%; background-color: rgb(228, 8, 8); border:none; float: left; font-size: 30px !important;">
-                            <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
-                        </button>
-                        <img src="../assets/nahual.png" alt=""
-                            style="height: 100%; width: 100%; max-width: 350px; max-height: 350px; ">
-                    </div>
-
-                    <div class="col-sm-6" style=" margin-top: 25px;">
-                        <button type="button" class=""
-                            style=" width: 50px; height: 50px; border-radius: 50%; background-color: rgb(25, 180, 129); border:none; float: right;">
-                            <i class="fa-solid fa-pen" style="color: aliceblue;"></i>
-                        </button>
-
-                        <p class="card-text">Puesto ocupado: Analista QA</p>
-                        <p>Empresa: Nahual IT</p>
-                        <p class="card-text">Periodo trabajado: 05/07/2021 hasta 22/04/2022</p>
-                        <p class="card-text">Tareas Realizadas: Testing</p>
-                    </div>
+                    <hr>
                 </div>
 
             </div>

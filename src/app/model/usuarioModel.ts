@@ -6,3 +6,12 @@ export interface Usuario{
 	titulo?: string;
 	descripcion?: string;
 }
+
+export interface Experiencia{
+	id?: number;
+	empresa?: string;
+	puesto?: string;
+	fechaDesde?: number;
+	fechaHasta?: string;
+	tareas?: string;
+}

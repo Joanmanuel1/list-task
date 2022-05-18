@@ -16,10 +16,18 @@ export class DatosPersonalesComponent implements OnInit {
   Usuario: any = [];
 
 
-  experiencia = {empresa: "", puesto: "", fecha_desde: "", fecha_hasta:"", tareas:"" };
   mensaje: string = "Errorr";
+
+
   experiencias: any = [];
-  experienciaId: string = "";
+  experienciaId: any = [];
+  experiencia = {id: "", empresa: "", puesto: "", fechaDesde: "", fechaHasta:"", tareas:"" };
+  datosNuevosExperiencia: any ={empresa: "test", puesto: "test", fecha_desde: "test", fecha_hasta: "test", tareas: "test"};
+
+  educaciones: any = [];
+  educacion = {id: "", universidad: "", titulo: "", fecha_desde: "", fecha_hasta:"" };
+  datosNuevosEducacion: any = {id: "", universidad: "", titulo: "", fecha_desde: "", fecha_hasta:"" };
+
 
 
   constructor(private usuarioService: UsuarioService, private router: Router) { }
@@ -48,6 +56,14 @@ export class DatosPersonalesComponent implements OnInit {
     this.usuarioService.listarExperiencias().subscribe(
       res => {
         this.experiencias = res;
+        console.log(res);
+      },
+      err => console.log(err)
+    )
+
+    this.usuarioService.listarEducaciones().subscribe(
+      res => {
+        this.educaciones = res;
         console.log(res);
       },
       err => console.log(err)
@@ -92,5 +108,32 @@ export class DatosPersonalesComponent implements OnInit {
       }
     )
   }
+
+
+  eliminarEducacion(educacion: string){
+    this.usuarioService.eliminarEducacion(educacion).subscribe(
+      res => {
+        let result: any = res;
+      },
+      err => {
+        console.log(this.mensaje);
+      }
+    )
+  }
+
+
+
+  modificarDatosExperiencia(experiencia: any) {
+    this.usuarioService.modificarDatosExperiencia(experiencia).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log(err.error.message);
+      }
+    )
+  }
+
+
 
 }

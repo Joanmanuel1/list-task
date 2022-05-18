@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import  { RouterModule, Routes } from '@angular/router';
-
+import { appRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -20,15 +20,11 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { DatosPersonalesComponent } from './components/datos-personales/datos-personales.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { UsuarioService } from './service/usuario.service';
+import { InterceptorService } from './service/interceptor.service';
 
 
-const appRoute:Routes = [
-  { path: 'task', component: TasksComponent},
-  { path: 'about', component: AboutComponent},
-  { path: 'ingresar', component: IngresarComponent},
-  { path: 'registrar', component: RegistrarComponent},
-  { path: '', component: PortfolioComponent},
-]
+
 
 @NgModule({
   declarations: [
@@ -54,11 +50,16 @@ const appRoute:Routes = [
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(appRoute, {enableTracing: true}),
-    
+    //RouterModule.forRoot(appRoute, {enableTracing: true}),
+    ReactiveFormsModule,
+    appRoutingModule
     
   ],
-  providers: [],
+  providers: [
+    UsuarioService,
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

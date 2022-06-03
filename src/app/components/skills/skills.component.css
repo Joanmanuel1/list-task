@@ -1,0 +1,68 @@
+hr{
+    border: 10px solid burlywood;
+    border-radius: 50px;
+  }
+  
+  .li{
+    margin: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+  }
+  
+  ul{
+    margin:0px;
+    padding: 0px;
+  }
+  
+  table, th, td {
+      border:1px solid black;
+      text-align: center;
+      width: 550px;
+    }
+  
+  
+    .fa-circle-xmark:hover{
+    color: rgb(255, 0, 0) !important;
+    }
+  
+    .fa-circle-xmark{
+      color: rgb(255, 255, 255); 
+      }
+  
+  
+    .fa-pen{
+      color: aliceblue; 
+    }
+  
+    .fa-pen:hover{
+      color: rgb(102, 255, 0); 
+    }
+  
+  
+  
+    .boton-editar-softSkills{
+     width: 50px; 
+     height: 50px; 
+     border-radius: 50%; 
+     background-color: rgb(25, 180, 129); 
+     border:none; 
+     float: right;
+    }
+    .boton-editar-softSkills:hover{
+      background-color: rgb(0, 56, 0); 
+  
+    }
+  
+    .boton-eliminar-softSkills{
+      width: 50px; 
+      height: 50px; 
+      border-radius: 50%; 
+      background-color: rgb(228, 8, 8); 
+      border:none; 
+      float: left; 
+      font-size: 30px !important;
+    }
+  
+    .boton-eliminar-softSkills:hover{
+      background-color: darkred;
+    }

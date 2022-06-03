@@ -70,5 +70,9 @@ export class UsuarioService {
 
 	}
 
+	listarSoftSkills() {
+		return this.http.get(`${this.API_URI}/softSkills/traer`);
+	}
+
 
 }

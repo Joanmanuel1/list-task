@@ -74,5 +74,16 @@ export class UsuarioService {
 		return this.http.get(`${this.API_URI}/softSkills/traer`);
 	}
 
+	listarHardSkills() {
+		return this.http.get(`${this.API_URI}/hardSkills/traer`);
+	}
+
+
+
+	listarProyectos() {
+		return this.http.get(`${this.API_URI}/proyectos/traer`);
+	}
+
+
 
 }

@@ -43,6 +43,7 @@
     "js-plugin-circliful": "^2.0.15",
     "json-server": "^0.17.0",
     "mdb-ui-kit": "^4.0.0",
+    "ng-circle-progress": "^1.6.0",
     "ng2-charts": "^3.0.10",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

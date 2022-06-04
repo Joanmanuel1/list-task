@@ -14,6 +14,7 @@ import {NgbProgressbarConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class SkillsComponent implements OnInit {
 
+  
 
   softSkills: any = [];
   softSkill = {id: "", habilidad: "", porcentaje: "" };
@@ -26,8 +27,8 @@ export class SkillsComponent implements OnInit {
 
   constructor(private usuarioService: UsuarioService, private router: Router, private config:NgbProgressbarConfig) {
     config.showValue=true,
-    config.type="success",
-    config.animated=true,
+    config.type="info",
+    config.animated=false,
     config.striped=true
 
    }
@@ -48,6 +49,7 @@ export class SkillsComponent implements OnInit {
       },
       err => console.log(err)
     )
+    this.config.animated=true;
 
   }
 

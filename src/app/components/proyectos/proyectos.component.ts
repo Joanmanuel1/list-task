@@ -13,7 +13,12 @@ export class ProyectosComponent implements OnInit {
   proyecto = {id: "", nombre: "", descripcion: "", fechaRealizacion: "", enlacePagina: "" };
   datosNuevosProyecto: any = {id: "", nombre: "", descripcion: "", fechaRealizacion: "", enlacePagina: ""  };
 
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
+
+
+
+  constructor(private usuarioService: UsuarioService, private router: Router) {
+
+   }
 
   ngOnInit(): void {
     this.usuarioService.listarProyectos().subscribe(
@@ -25,4 +30,9 @@ export class ProyectosComponent implements OnInit {
     )
   }
 
+
+
+
 }
+
+

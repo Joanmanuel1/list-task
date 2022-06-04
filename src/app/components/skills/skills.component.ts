@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../../service/usuario.service';
 import { Router } from '@angular/router'
+import {NgbProgressbarConfig} from '@ng-bootstrap/ng-bootstrap';
+
+
+
 
 
 @Component({
@@ -20,7 +24,13 @@ export class SkillsComponent implements OnInit {
   datosNuevoshardSkills: any = {id: "", habilidad: "", porcentaje: ""  };
 
 
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
+  constructor(private usuarioService: UsuarioService, private router: Router, private config:NgbProgressbarConfig) {
+    config.showValue=true,
+    config.type="success",
+    config.animated=true,
+    config.striped=true
+
+   }
 
   ngOnInit(): void {
     this.usuarioService.listarSoftSkills().subscribe(
@@ -40,5 +50,6 @@ export class SkillsComponent implements OnInit {
     )
 
   }
+
 
 }

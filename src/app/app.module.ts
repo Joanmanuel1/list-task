@@ -22,8 +22,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { UsuarioService } from './service/usuario.service';
 import { InterceptorService } from './service/interceptor.service';
-
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -44,6 +43,7 @@ import { InterceptorService } from './service/interceptor.service';
     ProyectosComponent, 
     
     
+    
   ],
   imports: [
     BrowserModule,
@@ -52,7 +52,8 @@ import { InterceptorService } from './service/interceptor.service';
     FormsModule,
     //RouterModule.forRoot(appRoute, {enableTracing: true}),
     ReactiveFormsModule,
-    appRoutingModule
+    appRoutingModule,
+    NgbModule
     
   ],
   providers: [

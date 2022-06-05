@@ -40,7 +40,7 @@ table, th, td {
 
 
 
-  .boton-editar-experiencia{
+  .boton-editar{
    width: 50px; 
    height: 50px; 
    border-radius: 50%; 
@@ -48,12 +48,12 @@ table, th, td {
    border:none; 
    float: right;
   }
-  .boton-editar-experiencia:hover{
+  .boton-editar:hover{
     background-color: rgb(0, 56, 0); 
 
   }
 
-  .boton-eliminar-experiencia{
+  .boton-eliminar{
     width: 50px; 
     height: 50px; 
     border-radius: 50%; 
@@ -63,6 +63,6 @@ table, th, td {
     font-size: 30px !important;
   }
 
-  .boton-eliminar-experiencia:hover{
+  .boton-eliminar:hover{
     background-color: darkred;
   }

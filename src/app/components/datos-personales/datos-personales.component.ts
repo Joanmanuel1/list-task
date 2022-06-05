@@ -28,6 +28,9 @@ export class DatosPersonalesComponent implements OnInit {
   educacion = {id: "", universidad: "", titulo: "", fecha_desde: "", fecha_hasta:"" };
   datosNuevosEducacion: any = {id: "", universidad: "", titulo: "", fecha_desde: "", fecha_hasta:"" };
 
+  personas: any = [];
+  persona = {id: "", nombre: "", apellido: "", titulo: "", descripcion:"" };
+  datosNuevosPersona: any = {id: "", nombre: "", apellido: "", titulo: "", descripcion:"" };
 
 
   constructor(private usuarioService: UsuarioService, private router: Router) { }
@@ -110,19 +113,6 @@ export class DatosPersonalesComponent implements OnInit {
   }
 
 
-  eliminarEducacion(educacion: string){
-    this.usuarioService.eliminarEducacion(educacion).subscribe(
-      res => {
-        let result: any = res;
-      },
-      err => {
-        console.log(this.mensaje);
-      }
-    )
-  }
-
-
-
   modificarDatosExperiencia(experiencia: any) {
     this.usuarioService.modificarDatosExperiencia(experiencia).subscribe(
       res => {
@@ -131,8 +121,54 @@ export class DatosPersonalesComponent implements OnInit {
       err => {
         console.log(err.error.message);
       }
-    )
-  }
+      )
+    }
+    
+    
+    crearEducacion(){
+      this.usuarioService.crearEducacion(this.educacion).subscribe(
+        res => {
+          let result: any = res;
+          this.router.navigate(['']);
+        },
+        err => {
+          console.log(this.mensaje);
+        }
+      )
+    }
+
+    eliminarEducacion(educacion: string){
+      this.usuarioService.eliminarEducacion(educacion).subscribe(
+        res => {
+          let result: any = res;
+        },
+        err => {
+          console.log(this.mensaje);
+        }
+      )
+    }
+  
+    modificarDatosEducacion(educacion: any) {
+      this.usuarioService.modificarDatosEducacion(educacion).subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log(err.error.message);
+        }
+        )
+      }
+
+      modificarDatosPersona(persona: any) {
+        this.usuarioService.modificarDatosPersona(persona).subscribe(
+          res => {
+            console.log(res);
+          },
+          err => {
+            console.log(err.error.message);
+          }
+          )
+        }
 
 
 

@@ -9,7 +9,7 @@ import { Experiencia, Usuario } from '../model/usuarioModel';
 	providedIn: 'root'
 })
 export class UsuarioService {
-	API_URI = 'http://localhost:8080';
+	API_URI = 'https://portfolio-arg-programa.herokuapp.com'; 
 	constructor(private http: HttpClient, private router: Router) { }
 
 	user = { id: "" };
@@ -22,31 +22,31 @@ export class UsuarioService {
 	/* CRUD USUARIOS */
 
 	listarUsuarios() {
-		//return this.http.get(`${this.API_URI}/personas/traer`);
-		return this.http.get(`http://localhost:8080/personas/traer`);
+		return this.http.get(`${this.API_URI}/personas/traer`);
+		//return this.http.get(`http://localhost:8080/personas/traer`);
 
 	}
 
 	buscarUsuario(id: string) {
 		//return this.http.get(`${this.API_URI}/personas/traer`);
-		return this.http.get(`http://localhost:8080/personas/traerUno/${id}`);
+		return this.http.get(`${this.API_URI}/personas/traerUno/${id}`);
 
 	}
 
 	registrar(usuario: any) {
 		this.user = usuario;
-		return this.http.post(`http://localhost:8080/personas/crear`, usuario, { responseType: 'text' });
+		return this.http.post(`${this.API_URI}/personas/crear`, usuario, { responseType: 'text' });
 
 	}
 
 	modificarDatosPersona(persona: any) {
-		return this.http.put(`http://localhost:8080/personas/editar/${persona.id}?nombre=${persona.nombre}&apellido=${persona.apellido}&titulo=${persona.titulo}&descripcion=${persona.descripcion}`, persona);
+		return this.http.put(`${this.API_URI}/personas/editar/${persona.id}?nombre=${persona.nombre}&apellido=${persona.apellido}&titulo=${persona.titulo}&descripcion=${persona.descripcion}`, persona);
 	}
 
 	/* CRUD EXPERIENCIAS */
 	buscarExperiencia(id: string) {
 		//return this.http.get(`${this.API_URI}/personas/traer`);
-		return this.http.get(`http://localhost:8080/experiencia/traerUno/${id}`);
+		return this.http.get(`${this.API_URI}/experiencia/traerUno/${id}`);
 
 	}
 
@@ -56,17 +56,17 @@ export class UsuarioService {
 
 	crearExperiencia(experiencia: any) {
 		this.experiencias = experiencia;
-		return this.http.post(`http://localhost:8080/experiencia/crear`, experiencia, { responseType: 'text' });
+		return this.http.post(`${this.API_URI}/experiencia/crear`, experiencia, { responseType: 'text' });
 
 	}
 
 	eliminarExperiencia(id: string) {
-		return this.http.delete(`http://localhost:8080/experiencia/borrar/${id}`, { responseType: 'text' });
+		return this.http.delete(`${this.API_URI}/experiencia/borrar/${id}`, { responseType: 'text' });
 
 	}
 
 	modificarDatosExperiencia(experiencia: any) {
-		return this.http.put(`http://localhost:8080/experiencia/editar/${experiencia.id}?empresa=${experiencia.empresa}&fechaDesde=${experiencia.fechaDesde}&fechaHasta=${experiencia.fechaHasta}&tareas=${experiencia.tareas}&puesto=${experiencia.puesto}`, experiencia);
+		return this.http.put(`${this.API_URI}/experiencia/editar/${experiencia.id}?empresa=${experiencia.empresa}&fechaDesde=${experiencia.fechaDesde}&fechaHasta=${experiencia.fechaHasta}&tareas=${experiencia.tareas}&puesto=${experiencia.puesto}`, experiencia);
 	}
 
 	
@@ -78,22 +78,22 @@ export class UsuarioService {
 	}
 
 	eliminarEducacion(id: string) {
-		return this.http.delete(`http://localhost:8080/educacion/borrar/${id}`, { responseType: 'text' });
+		return this.http.delete(`${this.API_URI}/educacion/borrar/${id}`, { responseType: 'text' });
 
 	}
 
 	crearEducacion(educacion: any) {
 		this.educaciones = educacion;
-		return this.http.post(`http://localhost:8080/educacion/crear`, educacion, { responseType: 'text' });
+		return this.http.post(`${this.API_URI}/educacion/crear`, educacion, { responseType: 'text' });
 
 	}
 
 	modificarDatosEducacion(educacion: any) {
-		return this.http.put(`http://localhost:8080/educacion/editar/${educacion.id}?universidad=${educacion.universidad}&titulo=${educacion.titulo}&fechaDesde=${educacion.fechaDesde}&fechaHasta=${educacion.fechaHasta}`, educacion);
+		return this.http.put(`${this.API_URI}/educacion/editar/${educacion.id}?universidad=${educacion.universidad}&titulo=${educacion.titulo}&fechaDesde=${educacion.fechaDesde}&fechaHasta=${educacion.fechaHasta}`, educacion);
 	}
 
 	buscarEducacion(id: string) {
-		return this.http.get(`http://localhost:8080/educacion/traerUno/${id}`);
+		return this.http.get(`${this.API_URI}/educacion/traerUno/${id}`);
 
 	}
 
@@ -105,22 +105,22 @@ export class UsuarioService {
 	}
 
 	eliminarSoftSkill(id: string) {
-		return this.http.delete(`http://localhost:8080/softSkills/borrar/${id}`, { responseType: 'text' });
+		return this.http.delete(`${this.API_URI}/softSkills/borrar/${id}`, { responseType: 'text' });
 
 	}
 
 	crearSoftSkills(softSkill: any) {
 		this.softSkills = softSkill;
-		return this.http.post(`http://localhost:8080/softSkills/crear`, softSkill, { responseType: 'text' });
+		return this.http.post(`${this.API_URI}/softSkills/crear`, softSkill, { responseType: 'text' });
 
 	}
 
 	modificarDatosSoftSkill(softSkill: any) {
-		return this.http.put(`http://localhost:8080/softSkills/editar/${softSkill.id}?habilidad=${softSkill.habilidad}&porcentaje=${softSkill.porcentaje}`, softSkill);
+		return this.http.put(`${this.API_URI}/softSkills/editar/${softSkill.id}?habilidad=${softSkill.habilidad}&porcentaje=${softSkill.porcentaje}`, softSkill);
 	}
 
 	buscarSoftSkill(id: string) {
-		return this.http.get(`http://localhost:8080/softSkills/traerUno/${id}`);
+		return this.http.get(`${this.API_URI}/softSkills/traerUno/${id}`);
 
 	}
 
@@ -131,22 +131,22 @@ export class UsuarioService {
 	}
 
 	eliminarHardSkill(id: string) {
-		return this.http.delete(`http://localhost:8080/hardSkills/borrar/${id}`, { responseType: 'text' });
+		return this.http.delete(`${this.API_URI}/hardSkills/borrar/${id}`, { responseType: 'text' });
 
 	}
 
 	crearHardSkill(hardSkill: any) {
 		this.hardSkills = hardSkill;
-		return this.http.post(`http://localhost:8080/hardSkills/crear`, hardSkill, { responseType: 'text' });
+		return this.http.post(`${this.API_URI}/hardSkills/crear`, hardSkill, { responseType: 'text' });
 
 	}
 
 	modificarDatosHardSkill(hardSkill: any) {
-		return this.http.put(`http://localhost:8080/hardSkills/editar/${hardSkill.id}?habilidad=${hardSkill.habilidad}&porcentaje=${hardSkill.porcentaje}`, hardSkill);
+		return this.http.put(`${this.API_URI}/hardSkills/editar/${hardSkill.id}?habilidad=${hardSkill.habilidad}&porcentaje=${hardSkill.porcentaje}`, hardSkill);
 	}
 
 	buscarHardSkill(id: string) {
-		return this.http.get(`http://localhost:8080/hardSkills/traerUno/${id}`);
+		return this.http.get(`${this.API_URI}/hardSkills/traerUno/${id}`);
 
 	}
 
@@ -156,22 +156,22 @@ export class UsuarioService {
 	}
 
 	eliminarProyecto(id: string) {
-		return this.http.delete(`http://localhost:8080/proyectos/borrar/${id}`, { responseType: 'text' });
+		return this.http.delete(`${this.API_URI}/proyectos/borrar/${id}`, { responseType: 'text' });
 
 	}
 
 	crearProyecto(hardSkill: any) {
 		this.hardSkills = hardSkill;
-		return this.http.post(`http://localhost:8080/proyectos/crear`, hardSkill, { responseType: 'text' });
+		return this.http.post(`${this.API_URI}/proyectos/crear`, hardSkill, { responseType: 'text' });
 
 	}
 
 	modificarDatosProyecto(proyecto: any) {
-		return this.http.put(`http://localhost:8080/proyectos/editar/${proyecto.id}?nombre=${proyecto.nombre}&descripcion=${proyecto.descripcion}&fechaRealizacion=${proyecto.fechaRealizacion}&enlacePagina=${proyecto.enlacePagina}`, proyecto);
+		return this.http.put(`${this.API_URI}/proyectos/editar/${proyecto.id}?nombre=${proyecto.nombre}&descripcion=${proyecto.descripcion}&fechaRealizacion=${proyecto.fechaRealizacion}&enlacePagina=${proyecto.enlacePagina}`, proyecto);
 	}
 
 	buscarProyecto(id: string) {
-		return this.http.get(`http://localhost:8080/proyectos/traerUno/${id}`);
+		return this.http.get(`${this.API_URI}/proyectos/traerUno/${id}`);
 
 	}
 

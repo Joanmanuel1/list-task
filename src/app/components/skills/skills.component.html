@@ -66,8 +66,8 @@
                     </div>
                 </div>
                 <!-- Modal -->
-                <div class="container-fluid" style="text-align: center; display: inline-flex; ">
-                    <ul *ngFor=" let softSkill of softSkills" style="margin: 1%; padding: 1%; border: 1px solid ;">
+                <div class="container-fluid" style="text-align: center;">
+                    <ul *ngFor=" let softSkill of softSkills" style="margin: 1%; padding: 1%; border: 1px solid; text-align: center; width: 18%; display: inline-block;">
                         <button type="button" class="boton-eliminar-softSkills" (click)="softSkill(softSkill.id)">
                             <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
                         </button>
@@ -137,8 +137,8 @@
                     </div>
                 </div>
                 <!-- Modal -->
-                <div class="container-fluid" style="text-align: center; display: inline-flex; ">
-                    <ul *ngFor=" let hardSkill of hardSkills" style="margin: 1%; padding: 1%; border: 1px solid; " >
+                <div class="container-fluid" style="text-align: center;">
+                    <ul *ngFor=" let hardSkill of hardSkills" style="margin: 1%; padding: 1%; border: 1px solid; text-align: center; width: 18%; display: inline-block;" >
                         <button type="button" class="boton-eliminar-softSkills" (click)="hardSkill(softSkill.id)">
                             <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
                         </button>

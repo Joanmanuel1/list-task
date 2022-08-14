@@ -5,11 +5,7 @@
         <h2 class="card-title">Proyectos Web </h2>
         <!-- Button trigger modal -->
         <div id="nuevo-proyecto">
-<<<<<<< HEAD
-          <button type="button" class="btn btn-success"  data-bs-toggle="modal"
-=======
           <button type="button" class="btn btn-success" data-bs-toggle="modal"
->>>>>>> master
             data-bs-target="#ModalSumarProyecto">¡Suma un nuevo Proyecto!
           </button>
         </div>
@@ -28,39 +24,6 @@
                     <form>
                       <div class="mb-3">
                         <label for=""> Nombre </label>
-<<<<<<< HEAD
-                        <input type="text" name="habilidad" [(ngModel)]="proyectos.nombre"
-                          placeholder="Ingrese la habilidad" class="form-control" autofocus required>
-                      </div>
-                      <div class="mb-3">
-                        <div class="content-select">
-                          <label for=""> Descripcion </label>
-                          <input type="number" name="porcentaje" [(ngModel)]="proyectos.descripcion"
-                            placeholder="Ingrese el procentaje" class="form-control" required>
-
-                        </div>
-                      </div>
-                      <div class="mb-3">
-                        <div class="content-select">
-                          <label for=""> Fecha de realizacion </label>
-                          <input type="date" name="fechaRealizacion" [(ngModel)]="proyectos.fechaRealizacion"
-                            placeholder="Ingrese la fecha de realizacion" class="form-control" required>
-
-                        </div>
-                      </div>
-                      <div class="mb-3">
-                        <div class="content-select">
-                          <label for=""> Enlace de la pagina </label>
-                          <input type="text" name="enlacePagina" [(ngModel)]="proyectos.descripcion"
-                            placeholder="Ingrese el enlace a la pagina web" class="form-control" required>
-
-                        </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save
-                          changes</button>
-=======
                         <input type="text" name="nombre" [(ngModel)]="proyecto.nombre"
                           placeholder="Ingrese el nombre del proyecto" class="form-control" autofocus required>
                       </div>
@@ -83,33 +46,21 @@
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
                           (click)="crearProyecto()">Guardar Cambios</button>
->>>>>>> master
                       </div>
                     </form>
                   </div>
                 </div>
               </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> master
             </div>
           </div>
         </div>
         <!-- Modal -->
         <ul class="form-group row" *ngFor=" let proyecto of proyectos">
-<<<<<<< HEAD
-          <div class="col-sm-6" style=" margin-top: 20px; margin-bottom: 20px;">
-            <button type="button" class="boton-eliminar-proyecto" (click)="proyecto(proyecto.id)">
-              <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
-            </button>
-=======
           <div class="col-sm-12" style="text-align: center; margin-top: 15px; margin-bottom: 20px;">
             <button type="button" class="boton-eliminar-proyecto" (click)="eliminarProyecto(proyecto.id)">
               <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
             </button>
             <!--
->>>>>>> master
             <div id="carouselExampleDark" class="carousel carousel-dark slide container" data-bs-ride="carousel"
               style="height: 100%; width: 100%; max-width: 750px; max-height: 700px; margin: 0 !important; padding: 0 !important; float: right; ">
               <div class="carousel-indicators">
@@ -131,43 +82,25 @@
                   </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-<<<<<<< HEAD
-                  <img src="../assets/proyecto2.png" class="d-block w-100" alt="..." >
-=======
                   <img src="../assets/proyecto2.png" class="d-block w-100" alt="...">
->>>>>>> master
                   <div class="carousel-caption d-none d-md-block">
                   </div>
                 </div>
                 <div class="carousel-item">
-<<<<<<< HEAD
-                  <img src="../assets/proyecto3.png" class="d-block w-100" alt="..." >
-=======
                   <img src="../assets/proyecto3.png" class="d-block w-100" alt="...">
->>>>>>> master
                   <div class="carousel-caption d-none d-md-block">
                   </div>
                 </div>
                 <div class="carousel-item">
-<<<<<<< HEAD
-                  <img src="../assets/proyecto4.png" class="d-block w-100" alt="..." >
-=======
                   <img src="../assets/proyecto4.png" class="d-block w-100" alt="...">
->>>>>>> master
                   <div class="carousel-caption d-none d-md-block">
                   </div>
                 </div>
-
                 <div class="carousel-item">
-<<<<<<< HEAD
-                  <img src="../assets/proyecto5.png" class="d-block w-100" alt="..." >
-=======
                   <img src="../assets/proyecto5.png" class="d-block w-100" alt="...">
->>>>>>> master
                   <div class="carousel-caption d-none d-md-block">
                   </div>
                 </div>
-
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
                 data-bs-slide="prev">
@@ -180,23 +113,9 @@
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
-<<<<<<< HEAD
-          </div>
-          <div class="col-sm-6" style=" margin-top: 15px; margin-bottom: 15px;">
-            <button type="button" class="boton-editar-proyecto">
-              <i class="fa-solid fa-pen"></i>
-            </button>
-            <div style="margin-top: 25px;">
-              <li class="li"><b>Nombre: </b> {{proyecto.nombre}} </li>
-              <li class="li"><b>Descripcion: </b> {{proyecto.descripcion}} </li>
-              <li class="li"><b>Fecha de finalizacion: </b> {{proyecto.fechaRealizacion}} </li>
-              <li class="li"><b>Enlace de la Pagina Web: </b> <a href="{{proyecto.enlacePagina}}"> {{proyecto.enlacePagina}}</a> </li>
-            </div>
-=======
             -->
             <!--
           </div>
-
             <div class="col-sm-6" style=" margin-top: 15px; margin-bottom: 15px;">
             -->
 
@@ -253,7 +172,6 @@
             <li class="li" style="list-style-type: none;"><b>Fecha de finalizacion: </b> {{proyecto.fechaRealizacion}}</li>
             <li class="li" style="list-style-type: none;"><b>Enlace de la Pagina Web: </b> <a
                 href="{{proyecto.enlacePagina}}"> {{proyecto.enlacePagina}}</a> </li>
->>>>>>> master
           </div>
           <hr>
         </ul>
@@ -261,10 +179,4 @@
 
     </div>
   </div>
-<<<<<<< HEAD
 </section>
-
-
-=======
-</section>
->>>>>>> master

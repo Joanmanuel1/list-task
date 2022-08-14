@@ -22,8 +22,6 @@ h1{
     max-width: 26rem; 
     margin-left: 45%; 
     border: 2px solid black;
-<<<<<<< HEAD
-=======
 }
 
 p{
@@ -32,5 +30,4 @@ p{
     color: red;
     background-color: whitesmoke;
     font: bold;
->>>>>>> master
 }

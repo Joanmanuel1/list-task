@@ -14,11 +14,7 @@ import {NgbProgressbarConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class SkillsComponent implements OnInit {
 
-<<<<<<< HEAD
-  
-=======
   mensaje: string = "Errorr";
->>>>>>> master
 
   softSkills: any = [];
   softSkill = {id: "", habilidad: "", porcentaje: "" };
@@ -57,8 +53,6 @@ export class SkillsComponent implements OnInit {
 
   }
 
-<<<<<<< HEAD
-=======
   modificarDatosHardSkill(hardSkill: any) {
     this.usuarioService.modificarDatosHardSkill(hardSkill).subscribe(
       res => {
@@ -129,6 +123,5 @@ export class SkillsComponent implements OnInit {
           }
         )
       }
->>>>>>> master
 
 }

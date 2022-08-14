@@ -73,10 +73,6 @@
                                                     <label for=""> Puesto </label>
                                                     <input type="text" name="puesto" [(ngModel)]="experiencia.puesto"
                                                         placeholder="Ingrese el nombre" class="form-control" required>
-<<<<<<< HEAD
-
-=======
->>>>>>> master
                                                 </div>
                                             </div>
                                             <div class="mb-3">
@@ -85,10 +81,6 @@
                                                     <input type="date" name="fechaDesde"
                                                         [(ngModel)]="experiencia.fechaDesde"
                                                         placeholder="Ingrese el nombre" class="form-control" required>
-<<<<<<< HEAD
-
-=======
->>>>>>> master
                                                 </div>
                                             </div>
                                             <div class="mb-3">
@@ -116,22 +108,13 @@
                                     </div>
                                 </div>
                             </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> master
                         </div>
                     </div>
                 </div>
                 <!-- Modal -->
                 <ul class="form-group row" *ngFor=" let experiencia of experiencias">
                     <div class="col-sm-6" style="text-align: right; margin-top: 15px; margin-bottom: 20px;">
-<<<<<<< HEAD
-                        <button type="button" class="boton-eliminar"
-                            (click)="eliminarExperiencia(experiencia.id)">
-=======
                         <button type="button" class="boton-eliminar" (click)="eliminarExperiencia(experiencia.id)">
->>>>>>> master
                             <i class="fa-solid fa-circle-xmark"></i>
                         </button>
                         <img src="../assets/{{experiencia.id}}.png" alt=""
@@ -166,10 +149,6 @@
                                                 <label for=""> Puesto </label>
                                                 <input type="text" name="puesto" [(ngModel)]="experiencia.puesto"
                                                     placeholder="Ingrese el nombre" class="form-control" required>
-<<<<<<< HEAD
-
-=======
->>>>>>> master
                                             </div>
                                         </div>
                                         <div class="mb-3">
@@ -178,10 +157,6 @@
                                                 <input type="date" name="fechaDesde"
                                                     [(ngModel)]="experiencia.fechaDesde" placeholder="Ingrese el nombre"
                                                     class="form-control" required>
-<<<<<<< HEAD
-
-=======
->>>>>>> master
                                             </div>
                                         </div>
                                         <div class="mb-3">
@@ -217,23 +192,11 @@
                         <li class="li"><b>Hasta:</b> {{experiencia.fechaHasta}} </li>
                     </div>
                     <hr>
-<<<<<<< HEAD
-
-                </ul>
-
-            </div>
-
-
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-
-
-=======
                 </ul>
             </div>
 
             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 
->>>>>>> master
                 <!-- CREAR EDUCACION BOTON MODAL -->
                 <button type="button" class="btn btn-success" style="margin-left:45%;" data-bs-toggle="modal"
                     data-bs-target="#ModalSumarEducacion">¡Suma una nueva educación!
@@ -264,10 +227,6 @@
                                                     <label for=""> Titulo </label>
                                                     <input type="text" name="puesto" [(ngModel)]="experiencia.puesto"
                                                         placeholder="Ingrese el nombre" class="form-control" required>
-<<<<<<< HEAD
-
-=======
->>>>>>> master
                                                 </div>
                                             </div>
                                             <div class="mb-3">
@@ -276,10 +235,6 @@
                                                     <input type="date" name="fechaDesde"
                                                         [(ngModel)]="experiencia.fechaDesde"
                                                         placeholder="Ingrese el nombre" class="form-control" required>
-<<<<<<< HEAD
-
-=======
->>>>>>> master
                                                 </div>
                                             </div>
                                             <div class="mb-3">
@@ -304,18 +259,9 @@
                 </div>
                 <!-- Modal -->
 
-<<<<<<< HEAD
-
-
-                <ul class="form-group row" *ngFor=" let educacion of educaciones">
-                    <div class="col-sm-6" style="text-align: right; margin-top: 20px; margin-bottom: 20px;">
-                        <button type="button" class="boton-eliminar"
-                            (click)="eliminarEducacion(educacion.id)">
-=======
                 <ul class="form-group row" *ngFor=" let educacion of educaciones">
                     <div class="col-sm-6" style="text-align: right; margin-top: 20px; margin-bottom: 20px;">
                         <button type="button" class="boton-eliminar" (click)="eliminarEducacion(educacion.id)">
->>>>>>> master
                             <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
                         </button>
                         <img src="../assets/{{educacion.id}}.png" alt=""
@@ -344,36 +290,21 @@
                                         <div class="mb-3">
                                             <label for=""> Universidad </label>
                                             <input type="text" name="universidad" [(ngModel)]="educacion.universidad"
-<<<<<<< HEAD
-                                                placeholder="Ingrese el nombre de la universidad" class="form-control" autofocus required>
-=======
                                                 placeholder="Ingrese el nombre de la universidad" class="form-control"
                                                 autofocus required>
->>>>>>> master
                                         </div>
                                         <div class="mb-3">
                                             <div class="content-select">
                                                 <label for=""> Titulo </label>
                                                 <input type="text" name="titulo" [(ngModel)]="educacion.titulo"
                                                     placeholder="Ingrese el titulo" class="form-control" required>
-<<<<<<< HEAD
-
-=======
->>>>>>> master
                                             </div>
                                         </div>
                                         <div class="mb-3">
                                             <div class="content-select">
                                                 <label for=""> Fecha desde </label>
-<<<<<<< HEAD
-                                                <input type="date" name="fechaDesde"
-                                                    [(ngModel)]="educacion.fechaDesde" placeholder="Ingrese el nombre"
-                                                    class="form-control" required>
-
-=======
                                                 <input type="date" name="fechaDesde" [(ngModel)]="educacion.fechaDesde"
                                                     placeholder="Ingrese el nombre" class="form-control" required>
->>>>>>> master
                                             </div>
                                         </div>
                                         <div class="mb-3">
@@ -399,10 +330,6 @@
                             <li class="li"><b>Titulo:</b> {{educacion.titulo}} </li>
                             <li class="li"><b>Desde:</b> {{educacion.fechaDesde}} </li>
                             <li class="li"><b>Hasta:</b> {{educacion.fechaHasta}} </li>
-<<<<<<< HEAD
-
-=======
->>>>>>> master
                         </div>
                     </div>
                     <hr>
@@ -410,8 +337,4 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 </section>

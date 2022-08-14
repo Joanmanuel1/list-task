@@ -47,15 +47,22 @@
                                                         [(ngModel)]="softSkill.porcentaje"
                                                         placeholder="Ingrese el procentaje" class="form-control"
                                                         required>
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
                                                 <button type="button" class="btn btn-primary"
+<<<<<<< HEAD
                                                     data-bs-dismiss="modal">Save
                                                     changes</button>
+=======
+                                                    data-bs-dismiss="modal" (click)="crearSoftSkill()">Save changes</button>
+>>>>>>> master
                                             </div>
                                         </form>
                                     </div>
@@ -67,6 +74,7 @@
                 </div>
                 <!-- Modal -->
                 <div class="container-fluid" style="text-align: center;">
+<<<<<<< HEAD
                     <ul *ngFor=" let softSkill of softSkills" style="margin: 1%; padding: 1%; border: 1px solid; text-align: center; width: 18%; display: inline-block;">
                         <button type="button" class="boton-eliminar-softSkills" (click)="softSkill(softSkill.id)">
                             <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
@@ -84,6 +92,63 @@
                     </ul>
                 </div>
 
+=======
+                    <ul *ngFor=" let softSkill of softSkills"
+                        style="margin: 1%; padding: 1%; border: 1px solid; text-align: center; width: 18%; display: inline-block;">
+                        <button type="button" class="boton-eliminar-softSkills"
+                            (click)="eliminarSoftSkill(softSkill.id)">
+                            <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
+                        </button>
+                        <!-- EDITAR SOFT SKILLS BOTON MODAL -->
+                        <button type="button" [attr.data-bs-toggle]="'modal'"
+                        [attr.data-bs-target]="'#myModal'+softSkill.id" class="boton-editar-softSkills">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                        <!-- EDITAR SOFT SKILLS BOTON MODAL-->
+                        <div class="modal fade" id="myModal{{softSkill.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar Soft Skill</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for=""> Habilidad </label>
+                                            <input type="text" name="habilidad" [(ngModel)]="softSkill.habilidad"
+                                                placeholder="Ingrese el nombre de la habilidad" class="form-control"
+                                                autofocus required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="content-select">
+                                                <label for=""> Porcentaje </label>
+                                                <input type="number" name="porcentaje"
+                                                    [(ngModel)]="softSkill.porcentaje"
+                                                    placeholder="Ingrese el porcentaje" class="form-control" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-success"
+                                            (click)="modificarDatosSoftSkill(softSkill)"
+                                            data-bs-dismiss="modal">Actualizar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal Editar Soft Skills termina -->
+                        <circle-progress [percent]="softSkill.porcentaje" [space]="-10" [radius]="100"
+                            [outerStrokeWidth]="10" [innerStrokeWidth]="10" [outerStrokeColor]="'pink'"
+                            [innerStrokeColor]="'#e7e8ea'" [animation]="true" [animationDuration]="1000"
+                            subtitle="Habilidad"></circle-progress>
+                        <li class="li"><b> {{softSkill.habilidad}}</b> </li>
+                        <li class="li"><b>Porcentaje:</b> {{softSkill.porcentaje}} % </li>
+                    </ul>
+                </div>
+>>>>>>> master
                 <hr>
             </div>
             <div class="tab-pane fade" id="pills-profile2" role="tabpanel" aria-labelledby="pills-profile-tab2">
@@ -118,26 +183,38 @@
                                                         [(ngModel)]="softSkill.porcentaje"
                                                         placeholder="Ingrese el procentaje" class="form-control"
                                                         required>
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
+<<<<<<< HEAD
                                                 <button type="button" class="btn btn-primary"
                                                     data-bs-dismiss="modal">Save
                                                     changes</button>
+=======
+                                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                                                    (click)="crearHardSkill()">Save changes</button>
+>>>>>>> master
                                             </div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
                         </div>
                     </div>
                 </div>
                 <!-- Modal -->
                 <div class="container-fluid" style="text-align: center;">
+<<<<<<< HEAD
                     <ul *ngFor=" let hardSkill of hardSkills" style="margin: 1%; padding: 1%; border: 1px solid; text-align: center; width: 18%; display: inline-block;" >
                         <button type="button" class="boton-eliminar-softSkills" (click)="hardSkill(softSkill.id)">
                             <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
@@ -149,11 +226,71 @@
                         [outerStrokeWidth]="10" [innerStrokeWidth]="10" [outerStrokeColor]="'pink'"
                         [innerStrokeColor]="'#e7e8ea'" [animation]="true" [animationDuration]="1000"
                         subtitle="Habilidad"></circle-progress>
+=======
+                    <ul *ngFor=" let hardSkill of hardSkills"
+                        style="margin: 1%; padding: 1%; border: 1px solid; text-align: center; width: 18%; display: inline-block;">
+                        <button type="button" class="boton-eliminar-softSkills"
+                            (click)="eliminarHardSkill(hardSkill.id)">
+                            <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
+                        </button>
+
+                        <!-- EDITAR HARD SKILLS BOTON MODAL -->
+                        <button type="button" [attr.data-bs-toggle]="'modal'"
+                            [attr.data-bs-target]="'#myModal'+hardSkill.id" class="boton-editar-softSkills">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+
+                        <!-- EDITAR HARD SKILLS BOTON MODAL-->
+                        <div class="modal fade" id="myModal{{hardSkill.id}}" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar Hard Skill</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for=""> Habilidad </label>
+                                            <input type="text" name="habilidad" [(ngModel)]="hardSkill.habilidad"
+                                                placeholder="Ingrese el nombre de la habilidad" class="form-control"
+                                                autofocus required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="content-select">
+                                                <label for=""> Porcentaje </label>
+                                                <input type="number" name="porcentaje"
+                                                    [(ngModel)]="hardSkill.porcentaje"
+                                                    placeholder="Ingrese el porcentaje" class="form-control" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-success"
+                                            (click)="modificarDatosHardSkill(hardSkill)"
+                                            data-bs-dismiss="modal">Actualizar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal Editar Hard Skills termina -->
+
+                        <circle-progress [percent]="hardSkill.porcentaje" [space]="-10" [radius]="100"
+                            [outerStrokeWidth]="10" [innerStrokeWidth]="10" [outerStrokeColor]="'pink'"
+                            [innerStrokeColor]="'#e7e8ea'" [animation]="true" [animationDuration]="1000"
+                            subtitle="Habilidad"></circle-progress>
+>>>>>>> master
                         <li class="li"><b> {{hardSkill.habilidad}}</b> </li>
                         <li class="li"><b>Porcentaje:</b> {{hardSkill.porcentaje}} % </li>
                     </ul>
                 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
                 <hr>
             </div>
         </div>

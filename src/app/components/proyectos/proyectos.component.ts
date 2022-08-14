@@ -14,6 +14,10 @@ export class ProyectosComponent implements OnInit {
   datosNuevosProyecto: any = {id: "", nombre: "", descripcion: "", fechaRealizacion: "", enlacePagina: ""  };
 
 
+<<<<<<< HEAD
+=======
+  mensaje: string = "Error en proyectos";
+>>>>>>> master
 
 
   constructor(private usuarioService: UsuarioService, private router: Router) {
@@ -30,6 +34,44 @@ export class ProyectosComponent implements OnInit {
     )
   }
 
+<<<<<<< HEAD
+=======
+  modificarDatosProyecto(proyecto: any) {
+    this.usuarioService.modificarDatosProyecto(proyecto).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log(err.error.message);
+      }
+      )
+    }
+
+    crearProyecto(){
+      this.usuarioService.crearProyecto(this.proyecto).subscribe(
+        res => {
+          let result: any = res;
+          this.router.navigate(['']);
+        },
+        err => {
+          console.log(this.mensaje);
+        }
+      )
+    }
+  
+    
+    eliminarProyecto(proyecto: string){
+      this.usuarioService.eliminarProyecto(proyecto).subscribe(
+        res => {
+          let result: any = res;
+        },
+        err => {
+          console.log(this.mensaje);
+        }
+      )
+    }
+
+>>>>>>> master
 
 
 

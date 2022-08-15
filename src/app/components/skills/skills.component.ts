@@ -55,6 +55,7 @@ export class SkillsComponent implements OnInit {
     this.usuarioService.modificarDatosHardSkill(hardSkill).subscribe(
       res => {
         console.log(res);
+        window.location.reload();
       },
       err => {
         console.log(err.error.message);
@@ -66,7 +67,7 @@ export class SkillsComponent implements OnInit {
       this.usuarioService.crearHardSkill(this.hardSkill).subscribe(
         res => {
           let result: any = res;
-          this.router.navigate(['']);
+          window.location.reload();
         },
         err => {
           console.log(this.mensaje);
@@ -79,6 +80,7 @@ export class SkillsComponent implements OnInit {
       this.usuarioService.eliminarHardSkill(hardSkill).subscribe(
         res => {
           let result: any = res;
+          window.location.reload();
         },
         err => {
           console.log(this.mensaje);
@@ -91,6 +93,7 @@ export class SkillsComponent implements OnInit {
       this.usuarioService.modificarDatosSoftSkill(softSkill).subscribe(
         res => {
           console.log(res);
+          window.location.reload();
         },
         err => {
           console.log(err.error.message);
@@ -102,7 +105,7 @@ export class SkillsComponent implements OnInit {
         this.usuarioService.crearSoftSkill(this.softSkill).subscribe(
           res => {
             let result: any = res;
-            this.router.navigate(['']);
+            window.location.reload();
           },
           err => {
             console.log(this.mensaje);
@@ -115,6 +118,7 @@ export class SkillsComponent implements OnInit {
         this.usuarioService.eliminarSoftSkill(softSkill).subscribe(
           res => {
             let result: any = res;
+            window.location.reload();
           },
           err => {
             console.log(this.mensaje);

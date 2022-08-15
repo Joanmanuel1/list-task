@@ -11,10 +11,10 @@
     </a>
   </div>
       <ul class="nav-derecha ">
-        <li type="none" class="nav-item">
+        <li type="none" class="nav-item" *ngIf="Usuario.logueado == 0">
           <a class="nav-link" href="ingresar">Ingresar</a>
         </li>
-        <li type="none" class="nav-item">
+        <li type="none" class="nav-item" *ngIf="Usuario.logueado == 0">
           <a class="nav-link" href="registrar">Registrar</a>
         </li>
 
@@ -46,6 +46,11 @@
           <a class="nav-link" style="color: #ac2bac;" href="#!" role="button"><i class="fab fa-instagram fa-lg"></i></a>
         </li>
         -->
+        <li type="none" class="nav-item" *ngIf="Usuario.logueado == 1" >
+            <button type="button" class="btn btn-info" (click)="modificarDatosLogueo()"> Cerrar Sesión
+              <i class="fa-solid fa-right-from-bracket"></i>
+          </button>
+        </li>
       </ul>
     </div>
 

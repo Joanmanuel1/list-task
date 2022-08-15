@@ -48,6 +48,7 @@ export class DatosPersonalesComponent implements OnInit {
     this.usuarioService.listarUsuarios().subscribe(
       res => {
         this.usuarios = res;
+        console.log(res)
       },
       err => console.log(err)
     )
@@ -88,7 +89,7 @@ export class DatosPersonalesComponent implements OnInit {
     this.usuarioService.crearExperiencia(this.experiencia).subscribe(
       res => {
         let result: any = res;
-        this.router.navigate(['']);
+        window.location.reload();
       },
       err => {
         console.log(this.mensaje);
@@ -101,6 +102,7 @@ export class DatosPersonalesComponent implements OnInit {
     this.usuarioService.eliminarExperiencia(experiencia).subscribe(
       res => {
         let result: any = res;
+        window.location.reload();
       },
       err => {
         console.log(this.mensaje);
@@ -113,6 +115,7 @@ export class DatosPersonalesComponent implements OnInit {
     this.usuarioService.modificarDatosExperiencia(experiencia).subscribe(
       res => {
         console.log(res);
+        window.location.reload();
       },
       err => {
         console.log(err.error.message);
@@ -125,7 +128,7 @@ export class DatosPersonalesComponent implements OnInit {
       this.usuarioService.crearEducacion(this.educacion).subscribe(
         res => {
           let result: any = res;
-          this.router.navigate(['']);
+          window.location.reload();
         },
         err => {
           console.log(this.mensaje);
@@ -137,6 +140,7 @@ export class DatosPersonalesComponent implements OnInit {
       this.usuarioService.eliminarEducacion(educacion).subscribe(
         res => {
           let result: any = res;
+          window.location.reload();
         },
         err => {
           console.log(this.mensaje);
@@ -148,6 +152,7 @@ export class DatosPersonalesComponent implements OnInit {
       this.usuarioService.modificarDatosEducacion(educacion).subscribe(
         res => {
           console.log(res);
+          window.location.reload();
         },
         err => {
           console.log(err.error.message);
@@ -159,6 +164,7 @@ export class DatosPersonalesComponent implements OnInit {
         this.usuarioService.modificarDatosPersona(persona).subscribe(
           res => {
             console.log(res);
+            window.location.reload();
           },
           err => {
             console.log(err.error.message);

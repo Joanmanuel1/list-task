@@ -1,6 +1,6 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { timeThursdays } from 'd3';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input  } from '@angular/core';
 import { UsuarioService } from '../../service/usuario.service';
 import { Router } from '@angular/router'
 
@@ -14,8 +14,8 @@ export class IngresarComponent implements OnInit {
   mensaje: string = "Errorr";
   email: string = "";
   reintentar: boolean = false;
-
-
+  reintentarImp = "message from parent";
+  persona = {id: "1", logueado: "1"};
   //form: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private router: Router, private usuarioService: UsuarioService) {
@@ -35,6 +35,7 @@ export class IngresarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
 
@@ -46,6 +47,8 @@ export class IngresarComponent implements OnInit {
         let result: any = res;   
         console.log(result);
         if( result == true){
+          //localStorage.setItem('Email', this.email)
+          this.modificarDatosLogueo();
           this.router.navigate(['']);
         }
         else{
@@ -67,7 +70,24 @@ export class IngresarComponent implements OnInit {
     //this.user.password="";
   }
 
+  estaLogueado(){
+    let email = sessionStorage.getItem(this.email)
+    console.log(this.email);
+  }
 
+  modificarDatosLogueo() {
+    console.log(this.persona);
+    this.usuarioService.modificarDatosLogueo(this.persona).subscribe(
+      res => {
+        //let result: any = res;
+        window.location.reload();
+        console.log(res);
+      },
+      err => {
+        console.log(err.error.message);
+      }
+      )
+    }
 
 
   /*

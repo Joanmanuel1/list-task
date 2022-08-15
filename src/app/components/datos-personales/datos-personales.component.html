@@ -21,15 +21,16 @@
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <div class="form-group row">
-                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
-                        <button type="button" class="boton-eliminar">
+
+                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;" >
+                        <button type="button" class="boton-eliminar" *ngIf="Usuario.logueado == 1">
                             <i class="fa-solid fa-circle-xmark"></i>
                         </button>
                         <img src="../assets/perfil.png" alt="foto de perfil"
                             style="height: 100%; width: 100%; max-width: 250px; max-height: 250px; ">
                     </div>
                     <div class="col-sm-6" style="margin-top: 25px;">
-                        <button type="button" class="boton-editar">
+                        <button type="button" class="boton-editar" *ngIf="Usuario.logueado == 1">
                             <i class="fa-solid fa-pen"></i>
                         </button>
 
@@ -45,7 +46,7 @@
 
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-success" style="margin-left:45%;" data-bs-toggle="modal"
-                    data-bs-target="#ModalSumarExperiencia">¡Suma una nueva experiencia!
+                    data-bs-target="#ModalSumarExperiencia" *ngIf="Usuario.logueado == 1">¡Suma una nueva experiencia!
                 </button>
 
                 <!-- Modal -->
@@ -113,18 +114,18 @@
                 </div>
                 <!-- Modal -->
                 <ul class="form-group row" *ngFor=" let experiencia of experiencias">
-                    <div class="col-sm-6" style="text-align: right; margin-top: 15px; margin-bottom: 20px;">
-                        <button type="button" class="boton-eliminar" (click)="eliminarExperiencia(experiencia.id)">
+                    <div class="col-sm-5" style="text-align: right;">
+                        <button type="button" class="boton-eliminar" (click)="eliminarExperiencia(experiencia.id)" *ngIf="Usuario.logueado == 0">
                             <i class="fa-solid fa-circle-xmark"></i>
                         </button>
                         <img src="../assets/{{experiencia.id}}.png" alt=""
-                            style="height: 100%; width: 100%; max-width: 450px; max-height: 350px; ">
+                            style="height: 100%; width: 100%; max-width: 400px; max-height: 200px; ">
                     </div>
 
-                    <div class="col-sm-6" style=" margin-top: 15px; margin-bottom: 15px;">
+                    <div class="col-sm-7" style=" margin-top: 15px; margin-bottom: 15px;">
                         <!-- EDITAR EXPERIENCIA BOTON MODAL -->
                         <button type="button" [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#myModal'+experiencia.id" class="boton-editar">
+                            [attr.data-bs-target]="'#myModal'+experiencia.id" class="boton-editar" *ngIf="Usuario.logueado == 0">
                             <i class="fa-solid fa-pen"></i>
                         </button>
 
@@ -185,11 +186,10 @@
                         </div>
                         <!-- Modal termina -->
 
-                        <li class="li"><b>Empresa:</b> {{experiencia.empresa}} </li>
+                        <li class="li"><b>Empresa:</b> {{experiencia.empresa}} </li>                       
                         <li class="li"><b>Puesto:</b> {{experiencia.puesto}} </li>
                         <li class="li"><b>Tareas:</b> {{experiencia.tareas}} </li>
-                        <li class="li"><b>Desde:</b> {{experiencia.fechaDesde}} </li>
-                        <li class="li"><b>Hasta:</b> {{experiencia.fechaHasta}} </li>
+                        <li class="li"><b>Desde:</b> {{experiencia.fechaDesde}} - <b>Hasta:</b> {{experiencia.fechaHasta}} </li>
                     </div>
                     <hr>
                 </ul>
@@ -199,7 +199,7 @@
 
                 <!-- CREAR EDUCACION BOTON MODAL -->
                 <button type="button" class="btn btn-success" style="margin-left:45%;" data-bs-toggle="modal"
-                    data-bs-target="#ModalSumarEducacion">¡Suma una nueva educación!
+                    data-bs-target="#ModalSumarEducacion" *ngIf="Usuario.logueado == 1">¡Suma una nueva educación!
                 </button>
 
                 <!-- CREAR EDUCACION BOTON MODAL -->
@@ -261,7 +261,7 @@
 
                 <ul class="form-group row" *ngFor=" let educacion of educaciones">
                     <div class="col-sm-6" style="text-align: right; margin-top: 20px; margin-bottom: 20px;">
-                        <button type="button" class="boton-eliminar" (click)="eliminarEducacion(educacion.id)">
+                        <button type="button" class="boton-eliminar" (click)="eliminarEducacion(educacion.id)" *ngIf="Usuario.logueado == 1">
                             <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
                         </button>
                         <img src="../assets/{{educacion.id}}.png" alt=""
@@ -272,7 +272,7 @@
 
                         <!-- EDITAR EDUCACION BOTON MODAL -->
                         <button type="button" [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#myModal'+educacion.id" class="boton-editar">
+                            [attr.data-bs-target]="'#myModal'+educacion.id" class="boton-editar" *ngIf="Usuario.logueado == 1">
                             <i class="fa-solid fa-pen"></i>
                         </button>
 

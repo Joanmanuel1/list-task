@@ -34,6 +34,7 @@ export class ProyectosComponent implements OnInit {
     this.usuarioService.modificarDatosProyecto(proyecto).subscribe(
       res => {
         console.log(res);
+        window.location.reload();
       },
       err => {
         console.log(err.error.message);
@@ -45,7 +46,7 @@ export class ProyectosComponent implements OnInit {
       this.usuarioService.crearProyecto(this.proyecto).subscribe(
         res => {
           let result: any = res;
-          this.router.navigate(['']);
+          window.location.reload();
         },
         err => {
           console.log(this.mensaje);
@@ -58,6 +59,7 @@ export class ProyectosComponent implements OnInit {
       this.usuarioService.eliminarProyecto(proyecto).subscribe(
         res => {
           let result: any = res;
+          window.location.reload();
         },
         err => {
           console.log(this.mensaje);

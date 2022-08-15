@@ -1,0 +1,33 @@
+.images{
+    background-image: url(https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/sliderimage1/1659143423/banner-ok-argentina-programa.jpg);
+
+}
+
+label{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: aliceblue;
+    background-color: black;
+}
+
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 54px;
+    color: aliceblue;
+    background-color: black;
+    color: aliceblue;
+}
+
+.formulario{
+    max-width: 26rem; 
+    margin-left: 45%; 
+    border: 2px solid black;
+}
+
+p{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+    color: red;
+    background-color: whitesmoke;
+    font: bold;
+}

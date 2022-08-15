@@ -1,0 +1,25 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    
+}
+
+.nav-link{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    text-align: right;
+}
+
+.nav-derecha{
+    text-align: right !important;
+    display: inline-flex !important;
+
+}
+
+.nav-izquierda{
+    text-align: left;
+    display: inline-flex;
+
+}

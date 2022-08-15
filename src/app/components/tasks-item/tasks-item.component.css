@@ -1,0 +1,24 @@
+.task  {
+    background-color: rgb(241, 232, 232);
+    margin: 5px 0px 20px 0px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.task.reminder{
+    border-left: 5px solid green;
+}
+
+.task h3{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p{
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
+}

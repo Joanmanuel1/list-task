@@ -1,0 +1,340 @@
+<section>
+    <div class="container-fluid">
+        <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation" style="width: 30%; margin-right: 25px;">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                    type="button" role="tab" aria-controls="pills-home" aria-selected="true" style="width: 100%;">Acerca
+                    de mi</button>
+            </li>
+            <li class="nav-item" role="presentation" style="width: 30%;  margin-right: 25px;">
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                    type="button" role="tab" aria-controls="pills-profile" aria-selected="false"
+                    style="width: 100%; ">Experiencia</button>
+            </li>
+            <li class="nav-item" role="presentation" style="width: 30%; margin-right: 25px;">
+                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                    type="button" role="tab" aria-controls="pills-contact" aria-selected="false"
+                    style="width: 100%; ">Educación</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="form-group row">
+                    <div class="col-sm-6" style="text-align: right; margin-top: 25px;">
+                        <button type="button" class="boton-eliminar">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </button>
+                        <img src="../assets/perfil.png" alt="foto de perfil"
+                            style="height: 100%; width: 100%; max-width: 250px; max-height: 250px; ">
+                    </div>
+                    <div class="col-sm-6" style="margin-top: 25px;">
+                        <button type="button" class="boton-editar">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+
+                        <h2>{{Usuario.nombre}} {{Usuario.apellido}} </h2>
+                        <h3>{{Usuario.titulo}}</h3>
+                        <p>{{Usuario.descripcion}}</p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success" style="margin-left:45%;" data-bs-toggle="modal"
+                    data-bs-target="#ModalSumarExperiencia">¡Suma una nueva experiencia!
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="ModalSumarExperiencia" tabindex="-1" aria-labelledby="ModalSumarExperiencia"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ModalSumarExperienciaLabel">Experiencia nueva</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for=""> Empresa </label>
+                                                <input type="text" name="empresa" [(ngModel)]="experiencia.empresa"
+                                                    placeholder="Ingrese el nombre" class="form-control" autofocus
+                                                    required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="content-select">
+                                                    <label for=""> Puesto </label>
+                                                    <input type="text" name="puesto" [(ngModel)]="experiencia.puesto"
+                                                        placeholder="Ingrese el nombre" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="content-select">
+                                                    <label for=""> Fecha desde </label>
+                                                    <input type="date" name="fechaDesde"
+                                                        [(ngModel)]="experiencia.fechaDesde"
+                                                        placeholder="Ingrese el nombre" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for=""> Fecha hasta </label>
+                                                <input type="date" name="fechaHasta"
+                                                    [(ngModel)]="experiencia.fechaHasta" class="form-control">
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="content-select">
+                                                    <label for=""> Tareas </label>
+                                                    <textarea name="tareas" id="" cols="10" rows="5"
+                                                        class="form-control" required
+                                                        placeholder="Ingrese sus tareas realizadas"
+                                                        [(ngModel)]="experiencia.tareas"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary"
+                                                    (click)="crearExperiencia()" data-bs-dismiss="modal">Save
+                                                    changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <ul class="form-group row" *ngFor=" let experiencia of experiencias">
+                    <div class="col-sm-6" style="text-align: right; margin-top: 15px; margin-bottom: 20px;">
+                        <button type="button" class="boton-eliminar" (click)="eliminarExperiencia(experiencia.id)">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </button>
+                        <img src="../assets/{{experiencia.id}}.png" alt=""
+                            style="height: 100%; width: 100%; max-width: 450px; max-height: 350px; ">
+                    </div>
+
+                    <div class="col-sm-6" style=" margin-top: 15px; margin-bottom: 15px;">
+                        <!-- EDITAR EXPERIENCIA BOTON MODAL -->
+                        <button type="button" [attr.data-bs-toggle]="'modal'"
+                            [attr.data-bs-target]="'#myModal'+experiencia.id" class="boton-editar">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+
+                        <!-- EDITAR EXPERIENCIA BOTON MODAL -->
+                        <div class="modal fade" id="myModal{{experiencia.id}}" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar Experiencia</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for=""> Empresa </label>
+                                            <input type="text" name="empresa" [(ngModel)]="experiencia.empresa"
+                                                placeholder="Ingrese el nombre" class="form-control" autofocus required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="content-select">
+                                                <label for=""> Puesto </label>
+                                                <input type="text" name="puesto" [(ngModel)]="experiencia.puesto"
+                                                    placeholder="Ingrese el nombre" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="content-select">
+                                                <label for=""> Fecha desde </label>
+                                                <input type="date" name="fechaDesde"
+                                                    [(ngModel)]="experiencia.fechaDesde" placeholder="Ingrese el nombre"
+                                                    class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for=""> Fecha hasta </label>
+                                            <input type="date" name="fechaHasta" [(ngModel)]="experiencia.fechaHasta"
+                                                class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="content-select">
+                                                <label for=""> Tareas </label>
+                                                <textarea name="tareas" id="" cols="10" rows="5" class="form-control"
+                                                    required placeholder="Ingrese sus tareas realizadas"
+                                                    [(ngModel)]="experiencia.tareas"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-success"
+                                            (click)="modificarDatosExperiencia(experiencia)"
+                                            data-bs-dismiss="modal">Actualizar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal termina -->
+
+                        <li class="li"><b>Empresa:</b> {{experiencia.empresa}} </li>
+                        <li class="li"><b>Puesto:</b> {{experiencia.puesto}} </li>
+                        <li class="li"><b>Tareas:</b> {{experiencia.tareas}} </li>
+                        <li class="li"><b>Desde:</b> {{experiencia.fechaDesde}} </li>
+                        <li class="li"><b>Hasta:</b> {{experiencia.fechaHasta}} </li>
+                    </div>
+                    <hr>
+                </ul>
+            </div>
+
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+
+                <!-- CREAR EDUCACION BOTON MODAL -->
+                <button type="button" class="btn btn-success" style="margin-left:45%;" data-bs-toggle="modal"
+                    data-bs-target="#ModalSumarEducacion">¡Suma una nueva educación!
+                </button>
+
+                <!-- CREAR EDUCACION BOTON MODAL -->
+                <div class="modal fade" id="ModalSumarEducacion" tabindex="-1" aria-labelledby="ModalSumarEducacion"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ModalSumarEducacionLabel">Educación nueva</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for=""> Universidad </label>
+                                                <input type="text" name="universidad" [(ngModel)]="experiencia.empresa"
+                                                    placeholder="Ingrese el nombre" class="form-control" autofocus
+                                                    required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="content-select">
+                                                    <label for=""> Titulo </label>
+                                                    <input type="text" name="puesto" [(ngModel)]="experiencia.puesto"
+                                                        placeholder="Ingrese el nombre" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="content-select">
+                                                    <label for=""> Fecha desde </label>
+                                                    <input type="date" name="fechaDesde"
+                                                        [(ngModel)]="experiencia.fechaDesde"
+                                                        placeholder="Ingrese el nombre" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for=""> Fecha hasta </label>
+                                                <input type="date" name="fechaHasta"
+                                                    [(ngModel)]="experiencia.fechaHasta" class="form-control">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary" (click)="crearEducacion()"
+                                                    data-bs-dismiss="modal">Save
+                                                    changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+
+                <ul class="form-group row" *ngFor=" let educacion of educaciones">
+                    <div class="col-sm-6" style="text-align: right; margin-top: 20px; margin-bottom: 20px;">
+                        <button type="button" class="boton-eliminar" (click)="eliminarEducacion(educacion.id)">
+                            <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
+                        </button>
+                        <img src="../assets/{{educacion.id}}.png" alt=""
+                            style="height: 100%; width: 100%; max-width: 400px; max-height: 200px; ">
+                    </div>
+
+                    <div class="col-sm-6" style=" margin-top: 15px; margin-bottom: 15px;">
+
+                        <!-- EDITAR EDUCACION BOTON MODAL -->
+                        <button type="button" [attr.data-bs-toggle]="'modal'"
+                            [attr.data-bs-target]="'#myModal'+educacion.id" class="boton-editar">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+
+                        <!-- EDITAR EDUCACION BOTON MODAL-->
+                        <div class="modal fade" id="myModal{{educacion.id}}" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar Educacion</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for=""> Universidad </label>
+                                            <input type="text" name="universidad" [(ngModel)]="educacion.universidad"
+                                                placeholder="Ingrese el nombre de la universidad" class="form-control"
+                                                autofocus required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="content-select">
+                                                <label for=""> Titulo </label>
+                                                <input type="text" name="titulo" [(ngModel)]="educacion.titulo"
+                                                    placeholder="Ingrese el titulo" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="content-select">
+                                                <label for=""> Fecha desde </label>
+                                                <input type="date" name="fechaDesde" [(ngModel)]="educacion.fechaDesde"
+                                                    placeholder="Ingrese el nombre" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for=""> Fecha hasta </label>
+                                            <input type="date" name="fechaHasta" [(ngModel)]="educacion.fechaHasta"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-success"
+                                            (click)="modificarDatosEducacion(educacion)"
+                                            data-bs-dismiss="modal">Actualizar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal Editar Educacion termina -->
+
+                        <div style="margin-top: 25px;">
+                            <li class="li"><b>Universidad:</b> {{educacion.universidad}} </li>
+                            <li class="li"><b>Titulo:</b> {{educacion.titulo}} </li>
+                            <li class="li"><b>Desde:</b> {{educacion.fechaDesde}} </li>
+                            <li class="li"><b>Hasta:</b> {{educacion.fechaHasta}} </li>
+                        </div>
+                    </div>
+                    <hr>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

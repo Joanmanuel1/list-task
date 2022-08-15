@@ -1,0 +1,25 @@
+{
+  "task": [
+    {
+      "text": "xcvxcvxc",
+      "day": "2022-03-02",
+      "reminder": false,
+      "tipo": "Estudio",
+      "id": 7
+    },
+    {
+      "text": "Futbol",
+      "day": "2022-03-03",
+      "reminder": true,
+      "tipo": "Estudio",
+      "id": 9
+    },
+    {
+      "text": "estefi",
+      "day": "2022-03-01",
+      "reminder": true,
+      "tipo": "Recreacion",
+      "id": 10
+    }
+  ]
+}

@@ -14,7 +14,11 @@ import {NgbProgressbarConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class SkillsComponent implements OnInit {
 
+<<<<<<< HEAD
   
+=======
+  mensaje: string = "Errorr";
+>>>>>>> master
 
   softSkills: any = [];
   softSkill = {id: "", habilidad: "", porcentaje: "" };
@@ -53,5 +57,78 @@ export class SkillsComponent implements OnInit {
 
   }
 
+<<<<<<< HEAD
+=======
+  modificarDatosHardSkill(hardSkill: any) {
+    this.usuarioService.modificarDatosHardSkill(hardSkill).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log(err.error.message);
+      }
+      )
+    }
+
+    crearHardSkill(){
+      this.usuarioService.crearHardSkill(this.hardSkill).subscribe(
+        res => {
+          let result: any = res;
+          this.router.navigate(['']);
+        },
+        err => {
+          console.log(this.mensaje);
+        }
+      )
+    }
+  
+    
+    eliminarHardSkill(hardSkill: string){
+      this.usuarioService.eliminarHardSkill(hardSkill).subscribe(
+        res => {
+          let result: any = res;
+        },
+        err => {
+          console.log(this.mensaje);
+        }
+      )
+    }
+  
+
+    modificarDatosSoftSkill(softSkill: any) {
+      this.usuarioService.modificarDatosSoftSkill(softSkill).subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log(err.error.message);
+        }
+        )
+      }
+  
+      crearSoftSkill(){
+        this.usuarioService.crearSoftSkill(this.softSkill).subscribe(
+          res => {
+            let result: any = res;
+            this.router.navigate(['']);
+          },
+          err => {
+            console.log(this.mensaje);
+          }
+        )
+      }
+    
+      
+      eliminarSoftSkill(softSkill: string){
+        this.usuarioService.eliminarSoftSkill(softSkill).subscribe(
+          res => {
+            let result: any = res;
+          },
+          err => {
+            console.log(this.mensaje);
+          }
+        )
+      }
+>>>>>>> master
 
 }

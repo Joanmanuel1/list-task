@@ -22,4 +22,15 @@ h1{
     max-width: 26rem; 
     margin-left: 45%; 
     border: 2px solid black;
+<<<<<<< HEAD
+=======
+}
+
+p{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+    color: red;
+    background-color: whitesmoke;
+    font: bold;
+>>>>>>> master
 }

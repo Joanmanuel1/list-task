@@ -3,37 +3,19 @@
         <div class="card-header">
             <h1 style="text-align: center;">Iniciar sesion</h1>
         </div>
-        <div class="card-body">
-            <form [formGroup]="form">
+        <div *ngIf="!reintentar" class="card-body">
+            <form (submit)="login()">
                 <div class="form-group">
                     <div class="container-fluid">
                         <div class="mb-3">
                             <label for=""> <b> Usuario </b> </label>
-                            <input type="text" name="nombre" placeholder="Ingrese su Email de Usuario"
-                                class="form-control" formControlName="email" formControlName="email" autofocus
-                                [ngClass]="{'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}">
-                            <div *ngIf="Email?.errors && Email?.touched">
-                                <p *ngIf="Email?.hasError('required')" class="text-danger">
-                                    El email es requerido.
-                                </p>
-                                <p *ngIf="Email?.hasError('email')" class="text-danger">
-                                    El formato del email debe ser valido.
-                                </p>
-                            </div>
+                            <input type="text" name="email" [(ngModel)]="email"
+                                placeholder="Ingrese su Email de Usuario" class="form-control" autofocus>
                         </div>
                         <div class="mb-3">
                             <label for=""> <b> Contraseña </b> </label>
                             <input type="password" name="password" placeholder="Ingrese su Contraseña"
-                                class="form-control" formControlName="password"
-                                [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}">
-                            <div *ngIf="Password?.errors && Password?.touched">
-                                <p *ngIf="Password?.hasError('required')" class="text-danger">
-                                    La contraseña es requerida.
-                                </p>
-                                <p *ngIf="Password?.hasError('password')" class="text-danger">
-                                    El formato de la contrasñea debe ser valida.
-                                </p>
-                            </div>
+                                class="form-control">
                         </div>
                         <button class="btn btn-success btn-block"><i class="fas fa-sign-in-alt"></i><b>
                                 Ingresar</b></button>
@@ -41,6 +23,12 @@
                     </div>
                 </div>
             </form>
+        </div>
+        <div *ngIf="reintentar" class="card-body">
+            <span class="usuario-invalido"> !Lo sentimos! </span> <br>
+            <span class="usuario-invalido"> ¡El usuario no existe! </span> <br>
+            <button class="btn btn-success" (click)=recargarForm()>Reintentar</button>
+            <button class="btn btn-danger" routerLink="../portfolio"> Cancelar</button>
         </div>
     </div>
 </div>

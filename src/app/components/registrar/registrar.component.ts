@@ -9,7 +9,7 @@ import { Router } from '@angular/router'
 })
 export class RegistrarComponent implements OnInit {
 
-  user = {nombre: "", apellido: "", edad: "" };
+  user = {email: "", contraseña: "" };
   mensaje: string = "Errorr";
   usuarios: any = [];
 
@@ -19,6 +19,7 @@ export class RegistrarComponent implements OnInit {
 
   }
 
+  /*
   registrar() {
     this.usuarioService.registrar(this.user).subscribe(
       res => {
@@ -31,7 +32,7 @@ export class RegistrarComponent implements OnInit {
     )
   }
 
-
+*/
 }
 
 

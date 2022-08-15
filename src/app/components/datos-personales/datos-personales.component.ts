@@ -48,7 +48,6 @@ export class DatosPersonalesComponent implements OnInit {
     this.usuarioService.listarUsuarios().subscribe(
       res => {
         this.usuarios = res;
-        console.log(res);
       },
       err => console.log(err)
     )
@@ -59,7 +58,6 @@ export class DatosPersonalesComponent implements OnInit {
     this.usuarioService.listarExperiencias().subscribe(
       res => {
         this.experiencias = res;
-        console.log(res);
       },
       err => console.log(err)
     )
@@ -67,7 +65,6 @@ export class DatosPersonalesComponent implements OnInit {
     this.usuarioService.listarEducaciones().subscribe(
       res => {
         this.educaciones = res;
-        console.log(res);
       },
       err => console.log(err)
     )
@@ -79,7 +76,6 @@ export class DatosPersonalesComponent implements OnInit {
     this.usuarioService.buscarUsuario("1").subscribe(
       res => {
         this.Usuario = res;
-        console.log("Buscar usuario 1", this.Usuario);
       },
       err => console.log(err)
     );
@@ -169,6 +165,8 @@ export class DatosPersonalesComponent implements OnInit {
           }
           )
         }
+
+
 
 
 

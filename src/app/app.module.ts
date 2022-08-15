@@ -21,7 +21,6 @@ import { DatosPersonalesComponent } from './components/datos-personales/datos-pe
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { UsuarioService } from './service/usuario.service';
-import { InterceptorService } from './service/interceptor.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
@@ -83,7 +82,6 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
   ],
   providers: [
     UsuarioService,
-    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}
   ],
 
   bootstrap: [AppComponent]

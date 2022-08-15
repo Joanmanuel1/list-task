@@ -1,66 +1,65 @@
 <section>
   <div class="card mb-3">
     <div class="container-fluid" style="margin-top: 15px;">
-      <div class="card-body">
-        <h2 class="card-title">Proyectos Web </h2>
-        <!-- Button trigger modal -->
-        <div id="nuevo-proyecto">
-          <button type="button" class="btn btn-success" data-bs-toggle="modal"
-            data-bs-target="#ModalSumarProyecto">¡Suma un nuevo Proyecto!
-          </button>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="ModalSumarProyecto" tabindex="-1" aria-labelledby="ModalSumarProyecto"
-          aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="ModalSumarProyectoLabel">Proyecto nuevo</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="mb-3">
-                  <div class="card-body">
-                    <form>
-                      <div class="mb-3">
-                        <label for=""> Nombre </label>
-                        <input type="text" name="nombre" [(ngModel)]="proyecto.nombre"
-                          placeholder="Ingrese el nombre del proyecto" class="form-control" autofocus required>
-                      </div>
-                      <div class="mb-3">
-                        <label for=""> Descripcion </label>
-                        <input type="text" name="descripcion" [(ngModel)]="proyecto.descripcion"
-                          placeholder="Ingrese la descripcion del proyecto" class="form-control" required>
-                      </div>
-                      <div class="mb-3">
-                        <label for=""> Fecha de realizacion </label>
-                        <input type="date" name="fechaRealizacion" [(ngModel)]="proyecto.fechaRealizacion"
-                          placeholder="Ingrese la fecha de realizacion del proyecto" class="form-control" required>
-                      </div>
-                      <div class="mb-3">
-                        <label for=""> Enlace de la pagina </label>
-                        <input type="text" name="enlacePagina" [(ngModel)]="proyecto.enlacePagina"
-                          placeholder="Ingrese el enlace a la pagina web" class="form-control" required>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-                          (click)="crearProyecto()">Guardar Cambios</button>
-                      </div>
-                    </form>
-                  </div>
+      <h2 class="card-title">Proyectos Web </h2>
+      <!-- Button trigger modal -->
+      <div id="nuevo-proyecto">
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalSumarProyecto">¡Suma
+          un nuevo Proyecto!
+        </button>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="ModalSumarProyecto" tabindex="-1" aria-labelledby="ModalSumarProyecto"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalSumarProyectoLabel">Proyecto nuevo</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <div class="card-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for=""> Nombre </label>
+                      <input type="text" name="nombre" [(ngModel)]="proyecto.nombre"
+                        placeholder="Ingrese el nombre del proyecto" class="form-control" autofocus required>
+                    </div>
+                    <div class="mb-3">
+                      <label for=""> Descripcion </label>
+                      <input type="text" name="descripcion" [(ngModel)]="proyecto.descripcion"
+                        placeholder="Ingrese la descripcion del proyecto" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for=""> Fecha de realizacion </label>
+                      <input type="date" name="fechaRealizacion" [(ngModel)]="proyecto.fechaRealizacion"
+                        placeholder="Ingrese la fecha de realizacion del proyecto" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for=""> Enlace de la pagina </label>
+                      <input type="text" name="enlacePagina" [(ngModel)]="proyecto.enlacePagina"
+                        placeholder="Ingrese el enlace a la pagina web" class="form-control" required>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        (click)="crearProyecto()">Guardar Cambios</button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- Modal -->
-        <ul class="form-group row" *ngFor=" let proyecto of proyectos">
-          <div class="col-sm-12" style="text-align: center; margin-top: 15px; margin-bottom: 20px;">
-            <button type="button" class="boton-eliminar-proyecto" (click)="eliminarProyecto(proyecto.id)">
-              <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
-            </button>
-            <!--
+      </div>
+      <!-- Modal -->
+      <ul class="form-group row" *ngFor=" let proyecto of proyectos">
+        <div class="col-sm-12" style="text-align: center; margin-top: 15px; margin-bottom: 20px;">
+          <button type="button" class="boton-eliminar-proyecto" (click)="eliminarProyecto(proyecto.id)">
+            <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
+          </button>
+          <!--
             <div id="carouselExampleDark" class="carousel carousel-dark slide container" data-bs-ride="carousel"
               style="height: 100%; width: 100%; max-width: 750px; max-height: 700px; margin: 0 !important; padding: 0 !important; float: right; ">
               <div class="carousel-indicators">
@@ -114,68 +113,66 @@
               </button>
             </div>
             -->
-            <!--
+          <!--
           </div>
             <div class="col-sm-6" style=" margin-top: 15px; margin-bottom: 15px;">
             -->
 
-            <!-- EDITAR PROYECTO BOTON MODAL -->
-            <button type="button" [attr.data-bs-toggle]="'modal'" [attr.data-bs-target]="'#myModal'+proyecto.id"
-              class="boton-editar-proyecto">
-              <i class="fa-solid fa-pen"></i>
-            </button>
-            <!-- EDITAR PROYECTO BOTON MODAL-->
-            <div class="modal fade" id="myModal{{proyecto.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Editar Proyecto</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <!-- EDITAR PROYECTO BOTON MODAL -->
+          <button type="button" [attr.data-bs-toggle]="'modal'" [attr.data-bs-target]="'#myModal'+proyecto.id"
+            class="boton-editar-proyecto">
+            <i class="fa-solid fa-pen"></i>
+          </button>
+          <!-- EDITAR PROYECTO BOTON MODAL-->
+          <div class="modal fade" id="myModal{{proyecto.id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Editar Proyecto</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <label for=""> Nombre </label>
+                    <input type="text" name="nombre" [(ngModel)]="proyecto.nombre"
+                      placeholder="Ingrese el nombre del proyecto" class="form-control" autofocus required>
                   </div>
-                  <div class="modal-body">
-                    <div class="mb-3">
-                      <label for=""> Nombre </label>
-                      <input type="text" name="nombre" [(ngModel)]="proyecto.nombre"
-                        placeholder="Ingrese el nombre del proyecto" class="form-control" autofocus required>
-                    </div>
-                    <div class="mb-3">
-                      <label for=""> Descripcion </label>
-                      <input type="text" name="descripcion" [(ngModel)]="proyecto.descripcion"
-                        placeholder="Ingrese la descripcion del proyecto" class="form-control" autofocus required>
-                    </div>
-                    <div class="mb-3">
-                      <label for=""> Fecha de realizacion </label>
-                      <input type="date" name="fechaRealizacion" [(ngModel)]="proyecto.fechaRealizacion"
-                        placeholder="Ingrese la fecha de realizacio del proyecto" class="form-control" autofocus
-                        required>
-                    </div>
-                    <div class="mb-3">
-                      <label for=""> Enlace de la pagina </label>
-                      <input type="text" name="enlace" [(ngModel)]="proyecto.enlacePagina"
-                        placeholder="Ingrese el enlace de la pagina del proyecto" class="form-control" autofocus
-                        required>
-                    </div>
+                  <div class="mb-3">
+                    <label for=""> Descripcion </label>
+                    <input type="text" name="descripcion" [(ngModel)]="proyecto.descripcion"
+                      placeholder="Ingrese la descripcion del proyecto" class="form-control" autofocus required>
                   </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-success" (click)="modificarDatosProyecto(proyecto)"
-                      data-bs-dismiss="modal">Actualizar</button>
+                  <div class="mb-3">
+                    <label for=""> Fecha de realizacion </label>
+                    <input type="date" name="fechaRealizacion" [(ngModel)]="proyecto.fechaRealizacion"
+                      placeholder="Ingrese la fecha de realizacio del proyecto" class="form-control" autofocus required>
                   </div>
+                  <div class="mb-3">
+                    <label for=""> Enlace de la pagina </label>
+                    <input type="text" name="enlace" [(ngModel)]="proyecto.enlacePagina"
+                      placeholder="Ingrese el enlace de la pagina del proyecto" class="form-control" autofocus required>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-success" (click)="modificarDatosProyecto(proyecto)"
+                    data-bs-dismiss="modal">Actualizar</button>
                 </div>
               </div>
             </div>
-            <!-- Modal Editar Proyecto termina -->
-
-            <li class="li" style="list-style-type: none;"><b>Nombre: </b> {{proyecto.nombre}} </li>
-            <li class="li" style="list-style-type: none;"><b>Descripcion: </b> {{proyecto.descripcion}} </li>
-            <li class="li" style="list-style-type: none;"><b>Fecha de finalizacion: </b> {{proyecto.fechaRealizacion}}</li>
-            <li class="li" style="list-style-type: none;"><b>Enlace de la Pagina Web: </b> <a
-                href="{{proyecto.enlacePagina}}"> {{proyecto.enlacePagina}}</a> </li>
           </div>
-          <hr>
-        </ul>
-      </div>
+          <!-- Modal Editar Proyecto termina -->
+
+          <li class="li" style="list-style-type: none;"><b>Nombre: </b> {{proyecto.nombre}} </li>
+          <li class="li" style="list-style-type: none;"><b>Descripcion: </b> {{proyecto.descripcion}} </li>
+          <li class="li" style="list-style-type: none;"><b>Fecha de finalizacion: </b> {{proyecto.fechaRealizacion}}
+          </li>
+          <li class="li" style="list-style-type: none;"><b>Enlace de la Pagina Web: </b> <a
+              href="{{proyecto.enlacePagina}}"> {{proyecto.enlacePagina}}</a> </li>
+        </div>
+        <hr>
+      </ul>
 
     </div>
   </div>

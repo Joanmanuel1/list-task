@@ -5,7 +5,6 @@ import { TasksComponent } from "./components/tasks/tasks.component"
 import { AboutComponent } from "./components/about/about.component"
 import { RegistrarComponent } from "./components/registrar/registrar.component"
 import { PortfolioComponent } from "./components/portfolio/portfolio.component"
-import { GuardGuard } from "./service/guard.guard"
 
 
 const appRoute:Routes = [

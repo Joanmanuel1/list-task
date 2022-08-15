@@ -37,7 +37,6 @@ export class SkillsComponent implements OnInit {
     this.usuarioService.listarSoftSkills().subscribe(
       res => {
         this.softSkills = res;
-        console.log(res);
       },
       err => console.log(err)
     )
@@ -45,7 +44,6 @@ export class SkillsComponent implements OnInit {
     this.usuarioService.listarHardSkills().subscribe(
       res => {
         this.hardSkills = res;
-        console.log(res);
       },
       err => console.log(err)
     )

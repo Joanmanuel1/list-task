@@ -25,7 +25,6 @@ export class ProyectosComponent implements OnInit {
     this.usuarioService.listarProyectos().subscribe(
       res => {
         this.proyectos = res;
-        console.log(res);
       },
       err => console.log(err)
     )

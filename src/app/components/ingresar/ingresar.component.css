@@ -31,3 +31,10 @@ p{
     background-color: whitesmoke;
     font: bold;
 }
+
+.usuario-invalido{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 26px;
+    color: whitesmoke;
+    background-color: darkred;
+}

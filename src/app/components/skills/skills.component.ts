@@ -18,12 +18,11 @@ export class SkillsComponent implements OnInit {
 
   softSkills: any = [];
   softSkill = {id: "", habilidad: "", porcentaje: "" };
-  datosNuevossoftSkills: any = {id: "", habilidad: "", porcentaje: ""  };
 
   hardSkills: any = [];
   hardSkill = {id: "", habilidad: "", porcentaje: "" };
-  datosNuevoshardSkills: any = {id: "", habilidad: "", porcentaje: ""  };
 
+  dato: any = [];
 
   constructor(private usuarioService: UsuarioService, private router: Router, private config:NgbProgressbarConfig) {
     config.showValue=true,
@@ -48,6 +47,9 @@ export class SkillsComponent implements OnInit {
       err => console.log(err)
     )
     this.config.animated=true;
+
+    this.dato = localStorage.getItem('email');
+
 
   }
 

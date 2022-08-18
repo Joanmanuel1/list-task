@@ -9,15 +9,17 @@
       src="../assets/argprog1.png"
       alt="" style="height: 30px; width: 120px;">
     </a>
+    <p class="programo">
+      Argentina Programa - #YoProgramo
+    </p>
   </div>
       <ul class="nav-derecha ">
-        <li type="none" class="nav-item" *ngIf="Usuario.logueado == 0">
+        <li type="none" class="nav-item" *ngIf="dato == null">
           <a class="nav-link" href="ingresar">Ingresar</a>
         </li>
-        <li type="none" class="nav-item" *ngIf="Usuario.logueado == 0">
+        <li type="none" class="nav-item" *ngIf="dato == null">
           <a class="nav-link" href="registrar">Registrar</a>
         </li>
-
         <li type="none" class="nav-item">
           <!-- Linkedin -->
           <a class="nav-link" href="https://www.linkedin.com/in/joanmanuelromero/" role="button"><i class="fa-brands fa-linkedin"></i></a>
@@ -46,8 +48,8 @@
           <a class="nav-link" style="color: #ac2bac;" href="#!" role="button"><i class="fab fa-instagram fa-lg"></i></a>
         </li>
         -->
-        <li type="none" class="nav-item" *ngIf="Usuario.logueado == 1" >
-            <button type="button" class="btn btn-info" (click)="modificarDatosLogueo()"> Cerrar Sesión
+        <li type="none" class="nav-item" *ngIf="dato != null" >
+            <button type="button" class="btn btn-info" (click)="desloguear()"> Cerrar Sesión
               <i class="fa-solid fa-right-from-bracket"></i>
           </button>
         </li>

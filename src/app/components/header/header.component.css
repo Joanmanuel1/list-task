@@ -23,3 +23,11 @@ header{
     display: inline-flex;
 
 }
+
+.programo{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: rgb(5, 5, 46);
+    font: bold;
+    margin-top:15px;
+}

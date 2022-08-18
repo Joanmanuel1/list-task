@@ -10,28 +10,17 @@ import { Router } from '@angular/router'
 export class DatosPersonalesComponent implements OnInit {
 
   usuarios: any = [];
-  usuarioID = 1;
-  
-  UsuarioID: any = [];
-  Usuario: any = [];
-
+  usuario = { id: "", nombre: "", apellido: "", titulo: "", descripcion: "" };
 
   mensaje: string = "Errorr";
 
-
   experiencias: any = [];
-  experienciaId: any = [];
-  experiencia = {id: "", empresa: "", puesto: "", fechaDesde: "", fechaHasta:"", tareas:"" };
-  datosNuevosExperiencia: any ={empresa: "test", puesto: "test", fecha_desde: "test", fecha_hasta: "test", tareas: "test"};
+  experiencia = { id: "", empresa: "", puesto: "", fechaDesde: "", fechaHasta: "", tareas: "" };
 
   educaciones: any = [];
-  educacion = {id: "", universidad: "", titulo: "", fecha_desde: "", fecha_hasta:"" };
-  datosNuevosEducacion: any = {id: "", universidad: "", titulo: "", fecha_desde: "", fecha_hasta:"" };
+  educacion = { id: "", universidad: "", titulo: "", fecha_desde: "", fecha_hasta: "" };
 
-  personas: any = [];
-  persona = {id: "", nombre: "", apellido: "", titulo: "", descripcion:"" };
-  datosNuevosPersona: any = {id: "", nombre: "", apellido: "", titulo: "", descripcion:"" };
-
+  dato: any = [];
 
   constructor(private usuarioService: UsuarioService, private router: Router) { }
 
@@ -70,13 +59,14 @@ export class DatosPersonalesComponent implements OnInit {
       err => console.log(err)
     )
 
+    this.dato = localStorage.getItem('email');
 
   }
 
   usuarioCargarDatos() {
     this.usuarioService.buscarUsuario("1").subscribe(
       res => {
-        this.Usuario = res;
+        this.usuarios = res;
       },
       err => console.log(err)
     );
@@ -84,8 +74,7 @@ export class DatosPersonalesComponent implements OnInit {
   }
 
 
-
-  crearExperiencia(){
+  crearExperiencia() {
     this.usuarioService.crearExperiencia(this.experiencia).subscribe(
       res => {
         let result: any = res;
@@ -97,8 +86,8 @@ export class DatosPersonalesComponent implements OnInit {
     )
   }
 
-  
-  eliminarExperiencia(experiencia: string){
+
+  eliminarExperiencia(experiencia: string) {
     this.usuarioService.eliminarExperiencia(experiencia).subscribe(
       res => {
         let result: any = res;
@@ -120,59 +109,57 @@ export class DatosPersonalesComponent implements OnInit {
       err => {
         console.log(err.error.message);
       }
-      )
-    }
-    
-    
-    crearEducacion(){
-      this.usuarioService.crearEducacion(this.educacion).subscribe(
-        res => {
-          let result: any = res;
-          window.location.reload();
-        },
-        err => {
-          console.log(this.mensaje);
-        }
-      )
-    }
+    )
+  }
 
-    eliminarEducacion(educacion: string){
-      this.usuarioService.eliminarEducacion(educacion).subscribe(
-        res => {
-          let result: any = res;
-          window.location.reload();
-        },
-        err => {
-          console.log(this.mensaje);
-        }
-      )
-    }
-  
-    modificarDatosEducacion(educacion: any) {
-      this.usuarioService.modificarDatosEducacion(educacion).subscribe(
-        res => {
-          console.log(res);
-          window.location.reload();
-        },
-        err => {
-          console.log(err.error.message);
-        }
-        )
+
+  crearEducacion() {
+    this.usuarioService.crearEducacion(this.educacion).subscribe(
+      res => {
+        let result: any = res;
+        window.location.reload();
+      },
+      err => {
+        console.log(this.mensaje);
       }
+    )
+  }
 
-      modificarDatosPersona(persona: any) {
-        this.usuarioService.modificarDatosPersona(persona).subscribe(
-          res => {
-            console.log(res);
-            window.location.reload();
-          },
-          err => {
-            console.log(err.error.message);
-          }
-          )
-        }
+  eliminarEducacion(educacion: string) {
+    this.usuarioService.eliminarEducacion(educacion).subscribe(
+      res => {
+        let result: any = res;
+        window.location.reload();
+      },
+      err => {
+        console.log(this.mensaje);
+      }
+    )
+  }
 
+  modificarDatosEducacion(educacion: any) {
+    this.usuarioService.modificarDatosEducacion(educacion).subscribe(
+      res => {
+        console.log(res);
+        window.location.reload();
+      },
+      err => {
+        console.log(err.error.message);
+      }
+    )
+  }
 
+  modificarDatosPersona(persona: any) {
+    this.usuarioService.modificarDatosPersona(persona).subscribe(
+      res => {
+        console.log(res);
+        window.location.reload();
+      },
+      err => {
+        console.log(err.error.message);
+      }
+    )
+  }
 
 
 

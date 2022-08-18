@@ -16,6 +16,7 @@ export class ProyectosComponent implements OnInit {
 
   mensaje: string = "Error en proyectos";
 
+  dato: any = [];
 
   constructor(private usuarioService: UsuarioService, private router: Router) {
 
@@ -28,6 +29,9 @@ export class ProyectosComponent implements OnInit {
       },
       err => console.log(err)
     )
+    
+    this.dato = localStorage.getItem('email');
+
   }
 
   modificarDatosProyecto(proyecto: any) {

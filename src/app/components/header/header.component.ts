@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
   
   persona = {id: "1", logueado: "0"};
 
+  dato: any = []; 
 
   constructor(private uiService: UiService, private router: Router, private usuarioService: UsuarioService) { 
     this.subscription = this.uiService.onToggle().subscribe(value => this.showAddTask = value)
@@ -33,6 +34,14 @@ export class HeaderComponent implements OnInit {
       },
       err => console.log(err)
     );
+
+    this.dato = localStorage.getItem('email');
+
+  }
+
+  desloguear(){
+    localStorage.clear();
+    window.location.reload();
   }
 
   modificarDatosLogueo() {

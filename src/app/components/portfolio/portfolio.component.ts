@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
-  
 
   constructor() {
 
@@ -17,8 +16,6 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
-
 
 
 }

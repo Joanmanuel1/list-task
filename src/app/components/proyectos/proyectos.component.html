@@ -4,7 +4,7 @@
       <h2 class="card-title">Proyectos Web </h2>
       <!-- Button trigger modal -->
       <div id="nuevo-proyecto">
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalSumarProyecto">¡Suma
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalSumarProyecto"  *ngIf="dato != null">¡Suma
           un nuevo Proyecto!
         </button>
       </div>
@@ -56,7 +56,7 @@
       <!-- Modal -->
       <ul class="form-group row" *ngFor=" let proyecto of proyectos">
         <div class="col-sm-12" style="text-align: center; margin-top: 15px; margin-bottom: 20px;">
-          <button type="button" class="boton-eliminar-proyecto" (click)="eliminarProyecto(proyecto.id)">
+          <button type="button" class="boton-eliminar-proyecto" (click)="eliminarProyecto(proyecto.id)"  *ngIf="dato != null">
             <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
           </button>
           <!--
@@ -120,7 +120,7 @@
 
           <!-- EDITAR PROYECTO BOTON MODAL -->
           <button type="button" [attr.data-bs-toggle]="'modal'" [attr.data-bs-target]="'#myModal'+proyecto.id"
-            class="boton-editar-proyecto">
+            class="boton-editar-proyecto"  *ngIf="dato != null">
             <i class="fa-solid fa-pen"></i>
           </button>
           <!-- EDITAR PROYECTO BOTON MODAL-->

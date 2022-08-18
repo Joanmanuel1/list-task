@@ -18,7 +18,7 @@
             <div class="tab-pane fade show active" id="pills-home2" role="tabpanel" aria-labelledby="pills-home-tab2">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-success" style="margin-left:45%;" data-bs-toggle="modal"
-                    data-bs-target="#ModalSumarsoftSkill">¡Suma una nueva Soft Skill!
+                    data-bs-target="#ModalSumarsoftSkill"  *ngIf="dato != null">¡Suma una nueva Soft Skill!
                 </button>
                 <!-- Modal -->
                 <div class="modal fade" id="ModalSumarsoftSkill" tabindex="-1" aria-labelledby="ModalSumarsoftSkill"
@@ -68,12 +68,12 @@
                     <ul *ngFor=" let softSkill of softSkills"
                         style="margin: 1%; padding: 1%; border: 1px solid; text-align: center; width: 18%; display: inline-block;">
                         <button type="button" class="boton-eliminar-softSkills"
-                            (click)="eliminarSoftSkill(softSkill.id)">
+                            (click)="eliminarSoftSkill(softSkill.id)"  *ngIf="dato != null">
                             <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
                         </button>
                         <!-- EDITAR SOFT SKILLS BOTON MODAL -->
                         <button type="button" [attr.data-bs-toggle]="'modal'"
-                        [attr.data-bs-target]="'#myModal'+softSkill.id" class="boton-editar-softSkills">
+                        [attr.data-bs-target]="'#myModal'+softSkill.id" class="boton-editar-softSkills"  *ngIf="dato != null">
                         <i class="fa-solid fa-pen"></i>
                     </button>
                         <!-- EDITAR SOFT SKILLS BOTON MODAL-->
@@ -125,7 +125,7 @@
             <div class="tab-pane fade" id="pills-profile2" role="tabpanel" aria-labelledby="pills-profile-tab2">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-success" style="margin-left:45%;" data-bs-toggle="modal"
-                    data-bs-target="#ModalSumarhardSkill">¡Suma una nueva Hard Skill!
+                    data-bs-target="#ModalSumarhardSkill"  *ngIf="dato != null">¡Suma una nueva Hard Skill!
                 </button>
                 <!-- Modal -->
                 <div class="modal fade" id="ModalSumarhardSkill" tabindex="-1" aria-labelledby="ModalSumarhardSkill"
@@ -174,13 +174,13 @@
                     <ul *ngFor=" let hardSkill of hardSkills"
                         style="margin: 1%; padding: 1%; border: 1px solid; text-align: center; width: 18%; display: inline-block;">
                         <button type="button" class="boton-eliminar-softSkills"
-                            (click)="eliminarHardSkill(hardSkill.id)">
+                            (click)="eliminarHardSkill(hardSkill.id)"  *ngIf="dato != null">
                             <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
                         </button>
 
                         <!-- EDITAR HARD SKILLS BOTON MODAL -->
                         <button type="button" [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#myModal'+hardSkill.id" class="boton-editar-softSkills">
+                            [attr.data-bs-target]="'#myModal'+hardSkill.id" class="boton-editar-softSkills"  *ngIf="dato != null">
                             <i class="fa-solid fa-pen"></i>
                         </button>
 

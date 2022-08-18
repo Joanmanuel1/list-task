@@ -12,10 +12,9 @@ import { Router } from '@angular/router'
 export class IngresarComponent implements OnInit {
 
   mensaje: string = "Errorr";
-  email: string = "";
   reintentar: boolean = false;
-  reintentarImp = "message from parent";
-  persona = {id: "1", logueado: "1"};
+  
+  email: any = [];
   //form: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private router: Router, private usuarioService: UsuarioService) {
@@ -40,16 +39,16 @@ export class IngresarComponent implements OnInit {
 
 
   login() {
-    console.log("Sign In");
-    console.log(this.email);
     this.usuarioService.buscarUsuarioEmail(this.email).subscribe(
       res => {
         let result: any = res;   
         console.log(result);
         if( result == true){
-          //localStorage.setItem('Email', this.email)
-          this.modificarDatosLogueo();
-          this.router.navigate(['']);
+          this.loguear();
+          this.router.navigate([''])
+          .then(() => {
+            window.location.reload();
+          });
         }
         else{
           console.log(this.mensaje)
@@ -70,44 +69,10 @@ export class IngresarComponent implements OnInit {
     //this.user.password="";
   }
 
-  estaLogueado(){
-    let email = sessionStorage.getItem(this.email)
-    console.log(this.email);
+  loguear(){
+    localStorage.setItem('email', this.email);
   }
 
-  modificarDatosLogueo() {
-    console.log(this.persona);
-    this.usuarioService.modificarDatosLogueo(this.persona).subscribe(
-      res => {
-        //let result: any = res;
-        window.location.reload();
-        console.log(res);
-      },
-      err => {
-        console.log(err.error.message);
-      }
-      )
-    }
-
-
-  /*
-
-
-  get Email() {
-    return this.form.get('email');
-  }
-
-  get Password() {
-    return this.form.get('password');
-  }
-  onEnviar(event:Event){
-    event.preventDefault;
-    this.autenticacionService.IniciarSesion(this.form.value).subscribe(data=> {
-      console.log("DATA: " + JSON.stringify(data));
-      this.ruta.navigate(['/portfolio']);
-    })
-  }
-  */
 
 
 }

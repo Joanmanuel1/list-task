@@ -165,5 +165,8 @@ export class UsuarioService {
 		return this.http.get(`${this.API_URI}/personas/traerEmail/${email}`);
 	}
 
+	buscarUsuarioContrasena(email: string) {
+		return this.http.get(`${this.API_URI}/personas/traerContrasena/${email}`);
+	}
 
 }

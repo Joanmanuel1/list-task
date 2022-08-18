@@ -72,3 +72,16 @@ table, th, td {
     font-size: 16px;
     color: black;
   }
+
+  .mb-3{
+    margin: 0 !important;
+  }
+
+  input{
+    margin-top: 5px !important;
+  }
+
+  textarea{
+    margin-top: 5px !important;
+
+  }

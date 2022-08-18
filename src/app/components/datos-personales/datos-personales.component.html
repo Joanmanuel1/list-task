@@ -61,8 +61,8 @@
                                         </div>
                                         <div class="mb-3">
                                             <div class="content-select">
-                                                <label for=""> Descripcion </label>
-                                                <textarea name="descripcion" id="descripcion" cols="10" rows="5" class="form-control" required
+                                                <label for=""> Descripcion</label>
+                                                <textarea name="descripcion" id="" cols="10" rows="5" class="form-control" required
                                                     placeholder="Ingrese su descripcion" [(ngModel)]="usuarios.descripcion">
                                                 </textarea>
                                             </div>
@@ -148,8 +148,8 @@
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
                                                 <button type="button" class="btn btn-primary"
-                                                    (click)="crearExperiencia()" data-bs-dismiss="modal">Save
-                                                    changes</button>
+                                                    (click)="crearExperiencia()" data-bs-dismiss="modal">Guardar Cambios
+                                                </button>
                                             </div>
                                         </form>
                                     </div>
@@ -294,8 +294,8 @@
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
                                                 <button type="button" class="btn btn-primary" (click)="crearEducacion()"
-                                                    data-bs-dismiss="modal">Save
-                                                    changes</button>
+                                                    data-bs-dismiss="modal">Guardar Cambios
+                                                </button>
                                             </div>
                                         </form>
                                     </div>
@@ -314,7 +314,7 @@
                             <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
                         </button>
                         <img src="../assets/{{educacion.id}}.png" alt=""
-                            style="height: 100%; width: 100%; max-width: 400px; max-height: 200px; ">
+                            style="height: 100%; width: 100%; max-width: 400px; max-height: 150px; ">
                     </div>
 
                     <div class="col-sm-6" style=" margin-top: 15px; margin-bottom: 15px;">
@@ -377,8 +377,7 @@
                         <div style="margin-top: 25px;">
                             <li class="li"><b>Universidad:</b> {{educacion.universidad}} </li>
                             <li class="li"><b>Titulo:</b> {{educacion.titulo}} </li>
-                            <li class="li"><b>Desde:</b> {{educacion.fechaDesde}} </li>
-                            <li class="li"><b>Hasta:</b> {{educacion.fechaHasta}} </li>
+                            <li class="li"><b>Desde:</b> {{educacion.fechaDesde}} - <b>Hasta:</b> {{educacion.fechaHasta}}</li>
                         </div>
                     </div>
                     <hr>

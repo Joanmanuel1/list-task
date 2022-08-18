@@ -41,7 +41,7 @@ export class IngresarComponent implements OnInit {
 
   login() {
     this.buscarEmail();
-    this.buscarContrasena();
+    //this.buscarContrasena();
 
   }
 
@@ -52,6 +52,10 @@ export class IngresarComponent implements OnInit {
         console.log(result);
         if( result == true){
           this.loguearEmail();
+          this.router.navigate([''])
+          .then(() => {
+            window.location.reload();
+          });
         }
         else{
           console.log(this.mensaje)

@@ -22,6 +22,9 @@ export class SkillsComponent implements OnInit {
   hardSkills: any = [];
   hardSkill = {id: "", habilidad: "", porcentaje: "" };
 
+  idiomas: any = [];
+  idioma = {id: "", habilidad: "", porcentaje: "", nombre:"" };
+
   dato: any = [];
 
   constructor(private usuarioService: UsuarioService, private router: Router, private config:NgbProgressbarConfig) {
@@ -46,6 +49,15 @@ export class SkillsComponent implements OnInit {
       },
       err => console.log(err)
     )
+
+    this.usuarioService.listarIdiomas().subscribe(
+      res => {
+        this.idiomas = res;
+      },
+      err => console.log(err)
+    )
+
+
     this.config.animated=true;
 
     this.dato = localStorage.getItem('email');
@@ -125,5 +137,41 @@ export class SkillsComponent implements OnInit {
           }
         )
       }
+
+      modificarDatosIdioma(idioma: any) {
+        this.usuarioService.modificarDatosIdiomas(idioma).subscribe(
+          res => {
+            window.location.reload();
+          },
+          err => {
+            console.log(err.error.message);
+          }
+          )
+        }
+    
+        crearIdioma(){
+          this.usuarioService.crearIdiomas(this.idioma).subscribe(
+            res => {
+              let result: any = res;
+              window.location.reload();
+            },
+            err => {
+              console.log(this.mensaje);
+            }
+          )
+        }
+      
+        
+        eliminarIdioma(idioma: string){
+          this.usuarioService.eliminarSoftSkill(idioma).subscribe(
+            res => {
+              let result: any = res;
+              window.location.reload();
+            },
+            err => {
+              console.log(this.mensaje);
+            }
+          )
+        }
 
 }

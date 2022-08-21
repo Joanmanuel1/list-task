@@ -242,31 +242,126 @@
                 <hr>
             </div>
             <div class="tab-pane fade" id="pills-idiomas3" role="tabpanel" aria-labelledby="pills-idiomas-tab3">
-
-                <div class="container-fluid" style="text-align: center;">
-                    <div class="container-fluid" style="text-align: center;">
-                        <ul style="margin: 1%; padding: 1%; border: 1px solid; text-align: center; width: 18%; display: inline-block;">
-
-                            <circle-progress [percent]="50" [space]="-10" [radius]="100" [outerStrokeWidth]="10"
-                                [innerStrokeWidth]="10" [outerStrokeColor]="'pink'" [innerStrokeColor]="'#e7e8ea'"
-                                [animation]="true" [animationDuration]="1000" subtitle="Habilidad"></circle-progress>
-                            <li class="li"><b> Ingles </b> </li>
-                            <li class="li"><b> Nivel: </b> Intermedio </li>
-                            <li class="li"><b> Porcentaje: </b> 50% </li>
-                        </ul>
-                        <ul style="margin: 1%; padding: 1%; border: 1px solid; text-align: center; width: 18%; display: inline-block;">
-                            <circle-progress [percent]="50" [space]="-10" [radius]="100" [outerStrokeWidth]="10"
-                                [innerStrokeWidth]="10" [outerStrokeColor]="'pink'" [innerStrokeColor]="'#e7e8ea'"
-                                [animation]="true" [animationDuration]="1000" subtitle="Habilidad"></circle-progress>
-                            <li class="li"><b> Frances </b> </li>
-                            <li class="li"><b> Nivel: </b> Basico </li>
-                            <li class="li"><b> Porcentaje: </b> 25% </li>
-                        </ul>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success" style="margin-left:45%;" data-bs-toggle="modal"
+                    data-bs-target="#ModalSumarIdioma" *ngIf="dato != null">¡Suma un nuevo idioma!
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="ModalSumarIdioma" tabindex="-1" aria-labelledby="ModalSumarIdioma"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ModalSumarIdiomaLabel">Idioma nuevo</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for=""> Idioma </label>
+                                                <input type="text" name="nombre" [(ngModel)]="idioma.nombre"
+                                                    placeholder="Ingrese el idioma" class="form-control" autofocus
+                                                    required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for=""> Nivel </label>
+                                                <input type="text" name="habilidad" [(ngModel)]="idioma.habilidad"
+                                                    placeholder="Ingrese la habilidad" class="form-control" autofocus
+                                                    required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="content-select">
+                                                    <label for=""> Porcentaje </label>
+                                                    <input type="number" name="porcentaje"
+                                                        [(ngModel)]="idioma.porcentaje"
+                                                        placeholder="Ingrese el procentaje" class="form-control"
+                                                        required>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                                                    (click)="crearIdioma()">Save changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <!-- Modal -->
+                <div class="container-fluid" style="text-align: center;">
+                    <ul *ngFor=" let idioma of idiomas"
+                        style="margin: 1%; padding: 1%; border: 1px solid; text-align: center; width: 18%; display: inline-block;">
+                        <button type="button" class="boton-eliminar-softSkills" (click)="eliminarIdioma(idioma.id)"
+                            *ngIf="dato != null">
+                            <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
+                        </button>
+                        <!-- EDITAR IDIOMA BOTON MODAL -->
+                        <button type="button" [attr.data-bs-toggle]="'modal'"
+                            [attr.data-bs-target]="'#myModal'+idioma.id" class="boton-editar-softSkills"
+                            *ngIf="dato != null">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                        <!-- EDITAR IDIOMA BOTON MODAL-->
+                        <div class="modal fade" id="myModal{{idioma.id}}" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Editar idioma</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for=""> Idioma </label>
+                                            <input type="text" name="nombre" [(ngModel)]="idioma.nombre"
+                                                placeholder="Ingrese el nombre de la habilidad" class="form-control"
+                                                autofocus required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for=""> Nivel </label>
+                                            <input type="text" name="habilidad" [(ngModel)]="idioma.habilidad"
+                                                placeholder="Ingrese el nombre de la habilidad" class="form-control"
+                                                autofocus required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="content-select">
+                                                <label for=""> Porcentaje </label>
+                                                <input type="number" name="porcentaje"
+                                                    [(ngModel)]="idioma.porcentaje"
+                                                    placeholder="Ingrese el porcentaje" class="form-control" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-success"
+                                            (click)="modificarDatosIdioma(idioma)"
+                                            data-bs-dismiss="modal">Actualizar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal Editar Idiomas termina -->
+                        <circle-progress [percent]="idioma.porcentaje" [space]="-10" [radius]="100"
+                            [outerStrokeWidth]="10" [innerStrokeWidth]="10" [outerStrokeColor]="'pink'"
+                            [innerStrokeColor]="'#e7e8ea'" [animation]="true" [animationDuration]="1000"
+                            subtitle="Habilidad"></circle-progress>
+                        <li class="li"><b> {{idioma.nombre}}</b> </li>
+                        <li class="li"><b> {{idioma.habilidad}}</b> </li>
+                        <li class="li"><b>Porcentaje:</b> {{idioma.porcentaje}} % </li>
+                    </ul>
                 </div>
                 <hr>
             </div>
-
         </div>
     </div>
 </section>

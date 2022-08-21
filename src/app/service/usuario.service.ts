@@ -136,8 +136,33 @@ export class UsuarioService {
 
 
 	buscarHardSkill(id: string) {
-		return this.http.get(`${this.API_URI}/hardSkills/traerUno/${id}`);
+		return this.http.get(`${this.API_URI}/idiomas/traerUno/${id}`);
 	}
+
+
+		/* CRUD IDIOMAS */
+
+		listarIdiomas() {
+			return this.http.get(`${this.API_URI}/idiomas/traer`);
+		}
+	
+		eliminarIdiomas(id: string) {
+			return this.http.delete(`${this.API_URI}/idiomas/borrar/${id}`, { responseType: 'text' });
+		}
+	
+		crearIdiomas(hardSkill: any) {
+			this.hardSkills = hardSkill;
+			return this.http.post(`${this.API_URI}/idiomas/crear`, hardSkill, { responseType: 'text' });
+		}
+	
+		modificarDatosIdiomas(idioma: any) {
+			return this.http.put(`${this.API_URI}/idiomas/editar/${idioma.id}?habilidad=${idioma.habilidad}&porcentaje=${idioma.porcentaje}&nombre=${idioma.nombre}`, idioma);
+		}
+	
+	
+		buscarIdioma(id: string) {
+			return this.http.get(`${this.API_URI}/idiomas/traerUno/${id}`);
+		}
 
 	/* CRUD PROYECTOS */
 	listarProyectos() {

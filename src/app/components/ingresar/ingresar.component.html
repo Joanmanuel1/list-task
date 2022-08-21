@@ -8,16 +8,25 @@
                 <div class="form-group">
                     <div class="container-fluid">
                         <div class="mb-3">
-                            <label for=""> <b> Usuario </b> </label>
-                            <input type="text" name="email" [(ngModel)]="email"
-                                placeholder="Ingrese su Email de Usuario" class="form-control" autofocus>
+                            <label for=""> <b> Email </b> </label>
+                            <input type="email" name="email" autofocus id="email" [(ngModel)]="email"
+                                placeholder="Ingrese su Email" class="form-control" >
+                                <div [ngSwitch]="errorEmail" class="errorField">
+                                    <div *ngSwitchCase="1"> <p>Debes completar el campo</p> </div>
+                                    <div *ngSwitchCase="2"><p>Email muy largo</p> </div>
+                                    <div *ngSwitchCase="3"><p>Email debe ser nombre@dominio.algo .</p> </div>
+                                </div>
                         </div>
                         <div class="mb-3">
                             <label for=""> <b> Contraseña </b> </label>
-                            <input type="password" name="password" placeholder="Ingrese su Contraseña"
-                                class="form-control">
+                            <input type="password" name="password" [(ngModel)]="password" 
+                                placeholder="Ingrese su Contraseña" class="form-control" required>
+                                <div [ngSwitch]="errorPassword" class="errorField">
+                                    <div *ngSwitchCase="1"><p>Debes completar el campo</p> </div>
+                                    <div *ngSwitchCase="2"><p>Contraseña muy larga</p> </div>
+                                </div>
                         </div>
-                        <button class="btn btn-success btn-block"><i class="fas fa-sign-in-alt"></i><b>
+                        <button class="btn btn-success btn-block" (click)="verificarForm()"><i class="fas fa-sign-in-alt"></i><b>
                                 Ingresar</b></button>
                         <a href=""> <b> ¿Olvidaste tu contraseña?</b></a>
                     </div>

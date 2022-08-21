@@ -18,33 +18,23 @@ export class DatosPersonalesComponent implements OnInit {
   experiencia = { id: "", empresa: "", puesto: "", fechaDesde: "", fechaHasta: "", tareas: "" };
 
   educaciones: any = [];
-  educacion = { id: "", universidad: "", titulo: "", fecha_desde: "", fecha_hasta: "" };
+  educacion = { id: "", universidad: "", titulo: "", fechaDesde: "", fechaHasta: "" };
 
-  dato: any = [];
+  correoStorage: any = [];
+  contasenaStorage: any = [];
 
   constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
 
-    /*
-      this.usuarioService.listarUsuarios().subscribe({
-        next: (v) => this.usuarios = v, 
-        error: (e) => console.error(e),
-        complete: () => console.info('complete') 
-      })
-    */
-
     this.usuarioService.listarUsuarios().subscribe(
       res => {
         this.usuarios = res;
-        console.log(res)
       },
       err => console.log(err)
     )
 
-
     this.usuarioCargarDatos();
-
     this.usuarioService.listarExperiencias().subscribe(
       res => {
         this.experiencias = res;
@@ -58,9 +48,8 @@ export class DatosPersonalesComponent implements OnInit {
       },
       err => console.log(err)
     )
-
-    this.dato = localStorage.getItem('email');
-
+    this.correoStorage = localStorage.getItem('email');
+    this.contasenaStorage = localStorage.getItem('contrasena');
   }
 
   usuarioCargarDatos() {
@@ -70,9 +59,7 @@ export class DatosPersonalesComponent implements OnInit {
       },
       err => console.log(err)
     );
-
   }
-
 
   crearExperiencia() {
     this.usuarioService.crearExperiencia(this.experiencia).subscribe(
@@ -103,8 +90,6 @@ export class DatosPersonalesComponent implements OnInit {
   modificarDatosExperiencia(experiencia: any) {
     this.usuarioService.modificarDatosExperiencia(experiencia).subscribe(
       res => {
-        console.log(res);
-        window.location.reload();
       },
       err => {
         console.log(err.error.message);
@@ -140,8 +125,6 @@ export class DatosPersonalesComponent implements OnInit {
   modificarDatosEducacion(educacion: any) {
     this.usuarioService.modificarDatosEducacion(educacion).subscribe(
       res => {
-        console.log(res);
-        window.location.reload();
       },
       err => {
         console.log(err.error.message);
@@ -152,8 +135,6 @@ export class DatosPersonalesComponent implements OnInit {
   modificarDatosPersona(persona: any) {
     this.usuarioService.modificarDatosPersona(persona).subscribe(
       res => {
-        console.log(res);
-        window.location.reload();
       },
       err => {
         console.log(err.error.message);

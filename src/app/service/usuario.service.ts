@@ -9,8 +9,8 @@ import { Experiencia, Usuario } from '../model/usuarioModel';
 	providedIn: 'root'
 })
 export class UsuarioService {
-	 API_URI = 'https://portfolio-arg-programa.herokuapp.com'; 
-	 //API_URI = 'http://localhost:8080';
+	 //API_URI = 'https://portfolio-arg-programa.herokuapp.com'; 
+	 API_URI = 'http://localhost:8080';
 
 	constructor(private http: HttpClient, private router: Router) { }
 
@@ -166,8 +166,8 @@ export class UsuarioService {
 		return this.http.get(`${this.API_URI}/personas/traerEmail/${email}`);
 	}
 
-	buscarUsuarioContrasena(email: string) {
-		return this.http.get(`${this.API_URI}/personas/traerContrasena/${email}`);
+	buscarUsuarioContrasena(password: string) {
+		return this.http.get(`${this.API_URI}/personas/traerPassword/${password}`);
 	}
 
 }

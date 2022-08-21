@@ -56,7 +56,6 @@ export class SkillsComponent implements OnInit {
   modificarDatosHardSkill(hardSkill: any) {
     this.usuarioService.modificarDatosHardSkill(hardSkill).subscribe(
       res => {
-        console.log(res);
         window.location.reload();
       },
       err => {
@@ -94,7 +93,6 @@ export class SkillsComponent implements OnInit {
     modificarDatosSoftSkill(softSkill: any) {
       this.usuarioService.modificarDatosSoftSkill(softSkill).subscribe(
         res => {
-          console.log(res);
           window.location.reload();
         },
         err => {

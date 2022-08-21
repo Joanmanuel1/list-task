@@ -37,7 +37,6 @@ export class ProyectosComponent implements OnInit {
   modificarDatosProyecto(proyecto: any) {
     this.usuarioService.modificarDatosProyecto(proyecto).subscribe(
       res => {
-        console.log(res);
         window.location.reload();
       },
       err => {

@@ -29,7 +29,7 @@
 
                         <!-- EDITAR USUARIO BOTON MODAL -->
                         <button type="button" [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#myModal'+usuarios.id" class="boton-editar" *ngIf="dato != null">
+                            [attr.data-bs-target]="'#myModal'+usuarios.id" class="boton-editar" *ngIf="correoStorage != null">
                             <i class="fa-solid fa-pen"></i>
                         </button>
 
@@ -93,7 +93,7 @@
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-success" style="margin-left:45%;" data-bs-toggle="modal"
-                    data-bs-target="#ModalSumarExperiencia" *ngIf="dato != null">¡Suma una nueva experiencia!
+                    data-bs-target="#ModalSumarExperiencia" *ngIf="correoStorage != null">¡Suma una nueva experiencia!
                 </button>
                 <!-- Modal -->
                 <div class="modal fade" id="ModalSumarExperiencia" tabindex="-1" aria-labelledby="ModalSumarExperiencia"
@@ -162,7 +162,7 @@
                 <ul class="form-group row" *ngFor=" let experiencia of experiencias">
                     <div class="col-sm-5" style="text-align: right;">
                         <button type="button" class="boton-eliminar" (click)="eliminarExperiencia(experiencia.id)"
-                            *ngIf="dato != null">
+                            *ngIf="correoStorage != null">
                             <i class="fa-solid fa-circle-xmark"></i>
                         </button>
                         <img src="../assets/{{experiencia.id}}.png" alt=""
@@ -172,7 +172,7 @@
                     <div class="col-sm-7" style=" margin-top: 15px; margin-bottom: 15px;">
                         <!-- EDITAR EXPERIENCIA BOTON MODAL -->
                         <button type="button" [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#myModal'+experiencia.id" class="boton-editar" *ngIf="dato != null">
+                            [attr.data-bs-target]="'#myModal'+experiencia.id" class="boton-editar" *ngIf="correoStorage != null">
                             <i class="fa-solid fa-pen"></i>
                         </button>
 
@@ -247,7 +247,7 @@
 
                 <!-- CREAR EDUCACION BOTON MODAL -->
                 <button type="button" class="btn btn-success" style="margin-left:45%;" data-bs-toggle="modal"
-                    data-bs-target="#ModalSumarEducacion" *ngIf="dato != null">¡Suma una nueva educación!
+                    data-bs-target="#ModalSumarEducacion" *ngIf="correoStorage != null">¡Suma una nueva educación!
                 </button>
 
                 <!-- CREAR EDUCACION BOTON MODAL -->
@@ -310,7 +310,7 @@
                 <ul class="form-group row" *ngFor=" let educacion of educaciones">
                     <div class="col-sm-6" style="text-align: right; margin-top: 20px; margin-bottom: 20px;">
                         <button type="button" class="boton-eliminar" (click)="eliminarEducacion(educacion.id)"
-                            *ngIf="dato != null">
+                            *ngIf="correoStorage != null">
                             <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
                         </button>
                         <img src="../assets/{{educacion.id}}.png" alt=""
@@ -321,7 +321,7 @@
 
                         <!-- EDITAR EDUCACION BOTON MODAL -->
                         <button type="button" [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#myModal'+educacion.id" class="boton-editar" *ngIf="dato != null">
+                            [attr.data-bs-target]="'#myModal'+educacion.id" class="boton-editar" *ngIf="correoStorage != null">
                             <i class="fa-solid fa-pen"></i>
                         </button>
 

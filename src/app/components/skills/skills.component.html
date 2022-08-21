@@ -13,12 +13,18 @@
                     style="width: 100%; ">Hard Skills
                 </button>
             </li>
+            <li class="nav-item" role="presentation" style="width: 30%;  margin-right: 25px;">
+                <button class="nav-link" id="pills-idiomas-tab3" data-bs-toggle="pill" data-bs-target="#pills-idiomas3"
+                    type="button" role="tab" aria-controls="pills-idiomas" aria-selected="false"
+                    style="width: 100%; ">Idiomas
+                </button>
+            </li>
         </ul>
         <div class="tab-content" id="pills-tabContent2">
             <div class="tab-pane fade show active" id="pills-home2" role="tabpanel" aria-labelledby="pills-home-tab2">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-success" style="margin-left:45%;" data-bs-toggle="modal"
-                    data-bs-target="#ModalSumarsoftSkill"  *ngIf="dato != null">¡Suma una nueva Soft Skill!
+                    data-bs-target="#ModalSumarsoftSkill" *ngIf="dato != null">¡Suma una nueva Soft Skill!
                 </button>
                 <!-- Modal -->
                 <div class="modal fade" id="ModalSumarsoftSkill" tabindex="-1" aria-labelledby="ModalSumarsoftSkill"
@@ -52,8 +58,8 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary"
-                                                    data-bs-dismiss="modal" (click)="crearSoftSkill()">Save changes</button>
+                                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                                                    (click)="crearSoftSkill()">Save changes</button>
                                             </div>
                                         </form>
                                     </div>
@@ -68,16 +74,18 @@
                     <ul *ngFor=" let softSkill of softSkills"
                         style="margin: 1%; padding: 1%; border: 1px solid; text-align: center; width: 18%; display: inline-block;">
                         <button type="button" class="boton-eliminar-softSkills"
-                            (click)="eliminarSoftSkill(softSkill.id)"  *ngIf="dato != null">
+                            (click)="eliminarSoftSkill(softSkill.id)" *ngIf="dato != null">
                             <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
                         </button>
                         <!-- EDITAR SOFT SKILLS BOTON MODAL -->
                         <button type="button" [attr.data-bs-toggle]="'modal'"
-                        [attr.data-bs-target]="'#myModal'+softSkill.id" class="boton-editar-softSkills"  *ngIf="dato != null">
-                        <i class="fa-solid fa-pen"></i>
-                    </button>
+                            [attr.data-bs-target]="'#myModal'+softSkill.id" class="boton-editar-softSkills"
+                            *ngIf="dato != null">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
                         <!-- EDITAR SOFT SKILLS BOTON MODAL-->
-                        <div class="modal fade" id="myModal{{softSkill.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="myModal{{softSkill.id}}" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -125,7 +133,7 @@
             <div class="tab-pane fade" id="pills-profile2" role="tabpanel" aria-labelledby="pills-profile-tab2">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-success" style="margin-left:45%;" data-bs-toggle="modal"
-                    data-bs-target="#ModalSumarhardSkill"  *ngIf="dato != null">¡Suma una nueva Hard Skill!
+                    data-bs-target="#ModalSumarhardSkill" *ngIf="dato != null">¡Suma una nueva Hard Skill!
                 </button>
                 <!-- Modal -->
                 <div class="modal fade" id="ModalSumarhardSkill" tabindex="-1" aria-labelledby="ModalSumarhardSkill"
@@ -151,7 +159,7 @@
                                                 <div class="content-select">
                                                     <label for=""> Porcentaje </label>
                                                     <input type="number" name="porcentaje"
-                                                        [(ngModel)]="softSkill.porcentaje"
+                                                        [(ngModel)]="hardSkills.porcentaje"
                                                         placeholder="Ingrese el procentaje" class="form-control"
                                                         required>
                                                 </div>
@@ -174,13 +182,14 @@
                     <ul *ngFor=" let hardSkill of hardSkills"
                         style="margin: 1%; padding: 1%; border: 1px solid; text-align: center; width: 18%; display: inline-block;">
                         <button type="button" class="boton-eliminar-softSkills"
-                            (click)="eliminarHardSkill(hardSkill.id)"  *ngIf="dato != null">
+                            (click)="eliminarHardSkill(hardSkill.id)" *ngIf="dato != null">
                             <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
                         </button>
 
                         <!-- EDITAR HARD SKILLS BOTON MODAL -->
                         <button type="button" [attr.data-bs-toggle]="'modal'"
-                            [attr.data-bs-target]="'#myModal'+hardSkill.id" class="boton-editar-softSkills"  *ngIf="dato != null">
+                            [attr.data-bs-target]="'#myModal'+hardSkill.id" class="boton-editar-softSkills"
+                            *ngIf="dato != null">
                             <i class="fa-solid fa-pen"></i>
                         </button>
 
@@ -232,6 +241,32 @@
                 </div>
                 <hr>
             </div>
+            <div class="tab-pane fade" id="pills-idiomas3" role="tabpanel" aria-labelledby="pills-idiomas-tab3">
+
+                <div class="container-fluid" style="text-align: center;">
+                    <div class="container-fluid" style="text-align: center;">
+                        <ul style="margin: 1%; padding: 1%; border: 1px solid; text-align: center; width: 18%; display: inline-block;">
+
+                            <circle-progress [percent]="50" [space]="-10" [radius]="100" [outerStrokeWidth]="10"
+                                [innerStrokeWidth]="10" [outerStrokeColor]="'pink'" [innerStrokeColor]="'#e7e8ea'"
+                                [animation]="true" [animationDuration]="1000" subtitle="Habilidad"></circle-progress>
+                            <li class="li"><b> Ingles </b> </li>
+                            <li class="li"><b> Nivel: </b> Intermedio </li>
+                            <li class="li"><b> Porcentaje: </b> 50% </li>
+                        </ul>
+                        <ul style="margin: 1%; padding: 1%; border: 1px solid; text-align: center; width: 18%; display: inline-block;">
+                            <circle-progress [percent]="50" [space]="-10" [radius]="100" [outerStrokeWidth]="10"
+                                [innerStrokeWidth]="10" [outerStrokeColor]="'pink'" [innerStrokeColor]="'#e7e8ea'"
+                                [animation]="true" [animationDuration]="1000" subtitle="Habilidad"></circle-progress>
+                            <li class="li"><b> Frances </b> </li>
+                            <li class="li"><b> Nivel: </b> Basico </li>
+                            <li class="li"><b> Porcentaje: </b> 25% </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+            </div>
+
         </div>
     </div>
 </section>

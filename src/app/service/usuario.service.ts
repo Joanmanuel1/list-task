@@ -20,6 +20,7 @@ export class UsuarioService {
 	hardSkills = { id: "" };
 	softSkills = { id: "" };
 	proyectos = { id: "" };
+	personas = {id: "" };
 
 	/* CRUD USUARIOS */
 

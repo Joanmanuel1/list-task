@@ -160,13 +160,13 @@
                 </div>
                 <!-- Modal -->
                 <ul class="form-group row" *ngFor=" let experiencia of experiencias">
-                    <div class="col-sm-5" style="text-align: right;">
+                    <div class="col-sm-5" style="text-align: right; margin-top: 20px; margin-bottom: 20px;">
                         <button type="button" class="boton-eliminar" (click)="eliminarExperiencia(experiencia.id)"
                             *ngIf="correoStorage != null">
                             <i class="fa-solid fa-circle-xmark"></i>
                         </button>
                         <img src="../assets/{{experiencia.id}}.png" alt=""
-                            style="height: 100%; width: 100%; max-width: 400px; max-height: 200px; ">
+                            style="height: 100%; width: 100%; max-width: 400px; max-height: 200px;">
                     </div>
 
                     <div class="col-sm-7" style=" margin-top: 15px; margin-bottom: 15px;">
@@ -237,7 +237,7 @@
                         <li class="li"><b>Puesto:</b> {{experiencia.puesto}} </li>
                         <li class="li"><b>Tareas:</b> {{experiencia.tareas}} </li>
                         <li class="li"><b>Desde:</b> {{experiencia.fechaDesde}} - <b>Hasta:</b>
-                            {{experiencia.fechaHasta}} </li>
+                            {{experiencia.fechaHasta}} </li>                     
                     </div>
                     <hr>
                 </ul>
@@ -314,7 +314,7 @@
                             <i class="fa-solid fa-circle-xmark" style="color: aliceblue; "></i>
                         </button>
                         <img src="../assets/{{educacion.id}}.png" alt=""
-                            style="height: 100%; width: 100%; max-width: 400px; max-height: 150px; ">
+                            style="height: 100%; width: 100%; max-width: 400px; max-height: 125px;">
                     </div>
 
                     <div class="col-sm-6" style=" margin-top: 15px; margin-bottom: 15px;">

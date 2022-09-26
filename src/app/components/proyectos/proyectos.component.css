@@ -67,10 +67,43 @@ hr{
       background-color: darkred;
     }
 
-    h2{
-        text-align: center;
-    }
+.card-title{
+  text-align: center;
+}
 
     #nuevo-proyecto{
       text-align: center;
     }
+
+
+    span{
+      color: black;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 24px;
+    }
+
+    h3{
+      color: black;
+      font-size: 28px;
+    }
+
+
+    .carousel-control-prev-icon{
+      background-image: url('https://apufpel.com.br/assets/img/seta_prim.png')
+   }
+   .carousel-control-next-icon{
+     background-image: url('https://apufpel.com.br/assets/img/seta_ult.png')
+   }
+
+
+   .carousel-caption {
+    position: absolute; 
+    right: 15%;
+    top: 15px; /* Cambiar bottom por top y los píxeles que necesites */
+    left: 15%;
+    z-index: 10;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+

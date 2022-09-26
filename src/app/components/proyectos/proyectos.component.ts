@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { UsuarioService } from '../../service/usuario.service';
 import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-proyectos',
   templateUrl: './proyectos.component.html',
-  styleUrls: ['./proyectos.component.css']
+  styleUrls: ['./proyectos.component.css'],
+  encapsulation: ViewEncapsulation.None
+
+  
 })
 export class ProyectosComponent implements OnInit {
 

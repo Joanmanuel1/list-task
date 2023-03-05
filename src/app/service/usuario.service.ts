@@ -9,7 +9,7 @@ import { Experiencia, Usuario } from '../model/usuarioModel';
 	providedIn: 'root'
 })
 export class UsuarioService {
-	 API_URI = 'https://portfolio-arg-programa.herokuapp.com'; 
+	 API_URI = 'https://argentina-programa-backend.up.railway.app';
 	 //API_URI = 'http://localhost:8080';
 
 	constructor(private http: HttpClient, private router: Router) { }

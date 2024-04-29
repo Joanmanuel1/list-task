@@ -9,8 +9,9 @@ import { Experiencia, Usuario } from '../model/usuarioModel';
 	providedIn: 'root'
 })
 export class UsuarioService {
-	 API_URI = 'https://argentina-programa-backend.up.railway.app';
+	 //API_URI = 'https://argentina-programa-backend.up.railway.app';
 	 //API_URI = 'http://localhost:8080';
+	 API_URI = 'https://parseapi.back4app.com/apps/pNgrreM69oAN9vuCIdY9YYJHRYYOvjQ4edfncfUB/';
 
 	constructor(private http: HttpClient, private router: Router) { }
 
